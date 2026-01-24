@@ -1,0 +1,41 @@
+using Ambev.DeveloperEvaluation.Domain.Common;
+
+namespace Ambev.DeveloperEvaluation.Domain.Entities;
+
+public class SaleItem : BaseEntity
+{
+    public Guid SaleId { get; private set; }
+    public Guid ProductId { get; private set; }
+    public int Quantity { get; private set; }
+    public decimal UnitPrice { get; private set; }
+    public decimal DiscountPercentage { get; private set; }
+    public decimal DiscountAmount { get; private set; }
+    public decimal TotalAmount { get; private set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime? UpdatedAt { get; private set; }
+    
+    public SaleItem(Guid productId,
+        int quantity,
+        decimal unitPrice,
+        decimal discountPercentage)
+    {
+        ProductId = productId;
+        Quantity = quantity;
+        UnitPrice = unitPrice;
+        DiscountPercentage = discountPercentage;
+
+        DiscountAmount = CalculateDiscountAmount();
+        TotalAmount = CalculateTotalAmount();
+    }
+    
+    
+    private decimal CalculateDiscountAmount()
+    {
+        return (Quantity * UnitPrice) * (DiscountPercentage * 0.01m);
+    }
+
+    private decimal CalculateTotalAmount()
+    {
+        return (Quantity * UnitPrice) - DiscountAmount;
+    }
+}
