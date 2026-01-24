@@ -1,4 +1,5 @@
 using Ambev.DeveloperEvaluation.Domain.Common;
+using Ambev.DeveloperEvaluation.Domain.Enums;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
@@ -17,6 +18,12 @@ public class Sale : BaseEntity
 
     public IReadOnlyCollection<SaleItem> Items => _items;
 
+    public Sale(Guid customerId, Guid branchId)
+    {
+        Id = Guid.NewGuid();
+        BranchId = branchId;
+        CustomerId = customerId;
+    }
 
     public void AddItem(SaleItem item)
     {

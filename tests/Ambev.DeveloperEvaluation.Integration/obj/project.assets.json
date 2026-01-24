@@ -3486,7 +3486,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/thiagoteixeira/.dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
