@@ -1,7 +1,19 @@
 namespace Ambev.DeveloperEvaluation.Application.Options;
 
-public record SaleUnitOptions(UnitPrice UnitPrice, Quantity UnitQuantity); 
+public record SaleUnitOptions
+{
+    public UnitPrice UnitPrice { get; set; }
+    public UnitQuantity UnitQuantity { get; set; }
+}
 
-public record UnitPrice(decimal Max,  decimal Min);
+public record UnitPrice
+{
+    public decimal Max { get; set; }
+    public decimal Min { get; set; }
+}
 
-public record Quantity(int Max,  decimal Int);
+public record UnitQuantity
+{
+    public int Max { get; set; }
+    public int Min { get; set; }
+}

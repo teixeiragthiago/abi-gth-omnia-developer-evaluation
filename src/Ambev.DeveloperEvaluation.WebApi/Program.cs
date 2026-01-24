@@ -1,4 +1,5 @@
 using Ambev.DeveloperEvaluation.Application;
+using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Common.HealthChecks;
 using Ambev.DeveloperEvaluation.Common.Logging;
 using Ambev.DeveloperEvaluation.Common.Security;
@@ -35,6 +36,8 @@ public class Program
                     b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.ORM")
                 )
             );
+            
+            builder.Services.Configure<SaleUnitOptions>(builder.Configuration.GetSection("SaleUnitOptions"));
 
             builder.Services.AddJwtAuthentication(builder.Configuration);
 
