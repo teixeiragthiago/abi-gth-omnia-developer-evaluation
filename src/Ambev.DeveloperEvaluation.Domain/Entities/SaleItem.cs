@@ -15,13 +15,13 @@ public class SaleItem : BaseEntity
     public DateTime? UpdatedAt { get; private set; }
     
     public SaleItem(Guid productId,
-        int quantity,
         decimal unitPrice,
+        int quantity,
         decimal discountPercentage)
     {
         ProductId = productId;
-        Quantity = quantity;
         UnitPrice = unitPrice;
+        Quantity = quantity;
         DiscountPercentage = discountPercentage;
 
         DiscountAmount = CalculateDiscountAmount();
