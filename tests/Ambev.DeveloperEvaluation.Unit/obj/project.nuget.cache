@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HqLioUI+Jg0=",
+  "dgSpecHash": "3DZFEph2pqI=",
   "success": true,
-  "projectFilePath": "/Users/thiagoteixeira/Desktop/abi-gth-omnia-developer-evaluation/template/backend/tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj",
+  "projectFilePath": "/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj",
   "expectedPackageFiles": [
     "/Users/thiagoteixeira/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",

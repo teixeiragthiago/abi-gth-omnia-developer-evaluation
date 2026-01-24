@@ -1,0 +1,47 @@
+2026-01-24 00:10:35.321 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-24 00:10:35.395 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-24 00:10:35.409 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Creating key {8e0737eb-d6ee-4ef2-8ddf-9b5c475b95c2} with creation date 2026-01-24 03:10:35Z, activation date 2026-01-24 03:10:35Z, and expiration date 2026-04-24 03:10:35Z.
+2026-01-24 00:10:35.412 -03:00 [INF] Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository Writing data to file '/Users/thiagoteixeira/.aspnet/DataProtection-Keys/key-8e0737eb-d6ee-4ef2-8ddf-9b5c475b95c2.xml'.
+2026-01-24 00:10:35.642 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-24 00:10:35.642 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-24 00:10:35.642 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-24 00:10:35.643 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-24 00:10:35.643 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-24 00:10:36.745 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger - null null
+2026-01-24 00:10:36.770 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger - 301 0 null 25.0159ms
+2026-01-24 00:10:36.791 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-24 00:10:36.848 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 56.6325ms
+2026-01-24 00:10:36.858 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/swagger-ui-bundle.js - null null
+2026-01-24 00:10:36.858 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.css - null null
+2026-01-24 00:10:36.861 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/swagger-ui-standalone-preset.js - null null
+2026-01-24 00:10:36.862 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-24 00:10:36.858 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/swagger-ui.css - null null
+2026-01-24 00:10:36.862 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 0.8911ms
+2026-01-24 00:10:36.867 -03:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-01-24 00:10:36.868 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.css - 200 202 text/css 9.3767ms
+2026-01-24 00:10:36.882 -03:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-01-24 00:10:36.882 -03:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-01-24 00:10:36.885 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/swagger-ui-standalone-preset.js - 200 230293 text/javascript 23.8385ms
+2026-01-24 00:10:36.886 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/swagger-ui.css - 200 152034 text/css 28.256ms
+2026-01-24 00:10:36.905 -03:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-01-24 00:10:36.932 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/swagger-ui-bundle.js - 200 1452753 text/javascript 74.0208ms
+2026-01-24 00:10:37.003 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-24 00:10:37.017 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/favicon-32x32.png - null null
+2026-01-24 00:10:37.017 -03:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-01-24 00:10:37.017 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/favicon-32x32.png - 200 628 image/png 0.4747ms
+2026-01-24 00:10:37.076 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 73.3605ms
+2026-01-24 00:10:51.649 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-24 00:11:34.239 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-24 00:11:34.306 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-24 00:11:34.516 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-24 00:11:34.516 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-24 00:11:34.516 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-24 00:11:34.516 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-24 00:11:34.516 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-24 00:11:35.286 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-24 00:11:35.355 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 70.1827ms
+2026-01-24 00:11:35.375 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-24 00:11:35.378 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.7739ms
+2026-01-24 00:11:35.453 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-24 00:11:35.536 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 82.0438ms
+2026-01-24 00:14:51.039 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
