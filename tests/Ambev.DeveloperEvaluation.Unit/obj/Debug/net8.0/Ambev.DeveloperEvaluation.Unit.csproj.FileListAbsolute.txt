@@ -223,3 +223,16 @@
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/obj/Debug/net8.0/Ambev.DeveloperEvaluation.Unit.pdb
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/obj/Debug/net8.0/Ambev.DeveloperEvaluation.Unit.genruntimeconfig.cache
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/obj/Debug/net8.0/ref/Ambev.DeveloperEvaluation.Unit.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.deps.json
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.runtimeconfig.json
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/appsettings.Development.json
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/appsettings.json
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.IoC.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.dll
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.pdb
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/bin/Debug/net8.0/Ambev.DeveloperEvaluation.IoC.pdb

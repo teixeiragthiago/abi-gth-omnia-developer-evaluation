@@ -40,4 +40,8 @@ public class Sale : BaseEntity
         UpdatedAt = DateTime.UtcNow;
     }
 
+    public void Cancel()
+    {
+        IsCancelled = true;
+    }
 }

@@ -35,7 +35,7 @@ public class SalesController : BaseController
         if(!resultValidation.IsValid)
             return BadRequest(resultValidation.Errors);
         
-        var command = _mapper.Map<CreateSaleCommand>(request);
+        var command = _mapper.Map<CreateSaleCommand>(request); //TODO create Mapper
         var result = await _mediator.Send(command, cancellationToken);
         
         return Accepted(result);

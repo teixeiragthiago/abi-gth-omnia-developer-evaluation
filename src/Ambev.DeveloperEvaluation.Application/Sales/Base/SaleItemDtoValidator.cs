@@ -12,7 +12,7 @@ public class SaleItemDtoValidator : AbstractValidator<SaleItemDto>
             .NotEmpty();
 
         RuleFor(saleItem => saleItem.Quantity)
-            .GreaterThan(options.UnitQuantity.Min)
+            .GreaterThanOrEqualTo(options.UnitQuantity.Min)
             .WithMessage(ValidationMessages.Min("Quantity", options.UnitQuantity.Min))
             .LessThanOrEqualTo(options.UnitQuantity.Max)
             .WithMessage(ValidationMessages.Max("Quantity", options.UnitQuantity.Max));

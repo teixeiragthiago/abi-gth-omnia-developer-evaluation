@@ -6,6 +6,7 @@ using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 
@@ -13,10 +14,10 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
-    private readonly SaleUnitOptions _options;
+    private readonly IOptions<SaleUnitOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, SaleUnitOptions options, ILogger<CreateSaleHandler> logger)
+    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, IOptions<SaleUnitOptions> options, ILogger<CreateSaleHandler> logger)
     {
         _saleRepository = saleRepository;
         _mapper = mapper;
@@ -26,15 +27,20 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
 
     public async Task<SaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
     {
-        var validator = new CreateSaleCommandValidator(_options);
+        var validator = new CreateSaleCommandValidator(_options.Value);
         var resultValidation = await validator.ValidateAsync(command, cancellationToken);
 
         if (!resultValidation.IsValid)
             throw new ValidationException(resultValidation.Errors);
-
-        var saleData = new Sale(command.CustomerId, command.BranchId);
         
-        var result = _mapper.Map<SaleResult>(saleData); //TODO criar mapper
+        _logger.LogInformation("Starting handle of new sale creation");
+
+        var saleEntity = new Sale(command.CustomerId, command.BranchId);
+        var sale = await _saleRepository.InsertAsync(saleEntity, cancellationToken);
+        
+        var result = _mapper.Map<SaleResult>(sale); //TODO criar mapper
+        
+        _logger.LogInformation("Finishing handle of new sale creation");
         
         return result;
     }
@@ -45,18 +51,12 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
         
         foreach (var item in command.Items)
         {
-            // var discountStrategy = _discountStrategyFactory.GetDiscountStrategy(item.Quantity);
-            // var discountPercentage = discountStrategy.CalculateDiscountPercentage();
-            // var strategyName = discountStrategy.GetType().Name;
-
             var saleItem = new SaleItem(
                 item.ProductId,
                 item.UnitPrice,
                 item.Quantity,
                 1 //TODO calculate
             );
-
-            // saleEntity.AddItem(saleItem, strategyName); //TODO
         }
         
         return saleEntity;
