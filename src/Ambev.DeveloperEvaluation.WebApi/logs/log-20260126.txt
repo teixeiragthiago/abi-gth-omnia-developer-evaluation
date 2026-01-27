@@ -1,0 +1,172 @@
+2026-01-26 21:52:05.899 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 21:52:05.976 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 21:52:06.268 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 21:52:06.268 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 21:52:06.268 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 21:52:06.269 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 21:52:06.270 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 21:52:07.362 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 21:52:07.436 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 75.2905ms
+2026-01-26 21:52:07.456 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 21:52:07.458 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.1925ms
+2026-01-26 21:52:07.495 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 21:52:07.580 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.2015ms
+2026-01-26 21:52:13.110 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 22:07:32.420 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 22:07:32.490 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 22:07:32.760 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 22:07:32.761 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 22:07:32.761 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 22:07:32.761 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 22:07:32.761 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 22:07:33.337 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 22:07:33.398 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 61.9373ms
+2026-01-26 22:07:33.426 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 22:07:33.429 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.3435ms
+2026-01-26 22:07:33.458 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 22:07:33.546 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.1509ms
+2026-01-26 22:07:39.243 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - application/json 244
+2026-01-26 22:07:39.273 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:07:39.290 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 22:07:39.412 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 22:07:39.593 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Starting handle of new sale creation
+2026-01-26 22:07:40.362 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 1067.8339ms
+2026-01-26 22:07:40.363 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:07:40.419 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 500 null text/plain; charset=utf-8 1176.1267ms
+2026-01-26 22:09:51.306 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 22:09:54.375 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 22:09:54.443 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 22:09:54.653 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 22:09:54.653 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 22:09:54.653 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 22:09:54.653 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 22:09:54.653 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 22:09:55.075 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 22:09:55.133 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 58.0432ms
+2026-01-26 22:09:55.151 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 22:09:55.153 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.5422ms
+2026-01-26 22:09:55.184 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 22:09:55.283 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.8276ms
+2026-01-26 22:10:38.478 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - application/json 244
+2026-01-26 22:10:38.524 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:10:38.538 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 22:10:38.647 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 22:10:38.820 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Starting handle of new sale creation
+2026-01-26 22:10:39.586 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 1045.0733ms
+2026-01-26 22:10:39.587 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:10:39.636 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 500 null text/plain; charset=utf-8 1158.7247ms
+2026-01-26 22:12:38.063 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 22:14:41.759 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 22:14:41.828 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 22:14:42.089 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 22:14:42.089 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 22:14:42.089 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 22:14:42.089 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 22:14:42.090 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 22:14:42.508 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 22:14:42.598 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 90.8705ms
+2026-01-26 22:14:42.618 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 22:14:42.622 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.9106ms
+2026-01-26 22:14:42.653 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 22:14:42.743 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.5281ms
+2026-01-26 22:14:47.893 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - application/json 244
+2026-01-26 22:14:47.911 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:14:47.922 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 22:14:48.038 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 22:14:48.207 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Starting handle of new sale creation
+2026-01-26 22:14:48.913 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 987.4617ms
+2026-01-26 22:14:48.915 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 22:14:48.964 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 500 null text/plain; charset=utf-8 1071.6997ms
+2026-01-26 22:20:19.418 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 22:20:31.486 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 22:20:31.556 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 22:20:31.773 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 22:20:31.774 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 22:20:31.774 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 22:20:31.774 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 22:20:31.774 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 22:20:32.042 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 22:20:32.104 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 63.4345ms
+2026-01-26 22:20:32.126 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 22:20:32.128 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.0957ms
+2026-01-26 22:20:32.159 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 22:20:32.249 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 89.3501ms
+2026-01-26 22:21:05.438 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 23:25:52.408 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 23:25:52.480 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 23:25:52.707 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 23:25:52.707 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 23:25:52.707 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 23:25:52.707 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 23:25:52.707 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 23:25:53.334 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 23:25:53.398 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 64.4304ms
+2026-01-26 23:25:53.433 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 23:25:53.435 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.822ms
+2026-01-26 23:25:53.463 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 23:25:53.553 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.6188ms
+2026-01-26 23:26:33.748 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - null null
+2026-01-26 23:26:33.792 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:26:33.810 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 23:26:33.902 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 23:26:34.926 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 1112.1645ms
+2026-01-26 23:26:34.928 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:26:34.948 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - 500 null text/plain; charset=utf-8 1200.2207ms
+2026-01-26 23:27:10.033 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 POST https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7/cancel - null 0
+2026-01-26 23:27:10.041 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:27:10.051 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CancelSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 23:27:10.053 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 23:27:10.064 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CancelSale.CancelSaleHandler Starting cancelling sale: "a138736b-821c-4581-9e62-8c4098aebee7"
+2026-01-26 23:27:10.088 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi) in 36.8585ms
+2026-01-26 23:27:10.089 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:27:10.093 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 POST https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7/cancel - 500 null text/plain; charset=utf-8 60.4515ms
+2026-01-26 23:27:43.147 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 POST https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7/items - null 0
+2026-01-26 23:27:43.163 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:27:43.166 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "IncludeSaleItem", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IncludeSaleItem(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 23:27:43.166 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 23:27:43.168 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) in 1.9482ms
+2026-01-26 23:27:43.168 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:27:43.169 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 POST https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7/items - 500 null text/plain; charset=utf-8 23.895ms
+2026-01-26 23:28:02.899 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 23:29:55.405 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 23:29:55.483 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 23:29:55.739 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 23:29:55.739 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 23:29:55.739 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 23:29:55.739 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 23:29:55.739 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 23:29:56.235 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 23:29:56.304 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 69.8619ms
+2026-01-26 23:29:56.331 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 23:29:56.336 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 5.2616ms
+2026-01-26 23:29:56.367 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 23:29:56.460 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.5565ms
+2026-01-26 23:30:00.134 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - null null
+2026-01-26 23:30:00.166 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:30:00.190 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 23:30:00.294 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 23:30:01.426 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 1231.2807ms
+2026-01-26 23:30:01.427 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:30:01.457 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - 500 null text/plain; charset=utf-8 1322.9168ms
+2026-01-26 23:30:53.567 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - null null
+2026-01-26 23:30:53.584 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:30:53.585 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-26 23:30:53.588 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-26 23:30:53.633 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 47.863ms
+2026-01-26 23:30:53.633 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-26 23:30:53.638 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/a138736b-821c-4581-9e62-8c4098aebee7 - 500 null text/plain; charset=utf-8 71.4621ms
+2026-01-26 23:30:57.549 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-26 23:44:02.553 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-26 23:44:02.624 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-26 23:44:02.885 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-26 23:44:02.885 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-26 23:44:02.885 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-26 23:44:02.885 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-26 23:44:02.885 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-26 23:44:03.187 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-26 23:44:03.266 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 79.262ms
+2026-01-26 23:44:03.292 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-26 23:44:03.296 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.7871ms
+2026-01-26 23:44:03.327 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-26 23:44:03.468 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 140.8817ms
+2026-01-26 23:44:49.329 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...

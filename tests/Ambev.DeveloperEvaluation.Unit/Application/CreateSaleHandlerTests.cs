@@ -38,7 +38,7 @@ public class CreateSaleHandlerTests
     [Fact(DisplayName = "Given valid sale command When handling Then returns sale result")]
     public async Task Handle_ValidCommand_ReturnsSaleResult()
     {
-        // Given
+        //Arrange
         var command = CreateSaleHandlerTestData.GenerateValidCommand();
 
         var saleEntity = new Sale(command.CustomerId, command.BranchId)
@@ -46,33 +46,25 @@ public class CreateSaleHandlerTests
             Id = Guid.NewGuid()
         };
 
-        var saleResult = new SaleResult
+        var saleResult = new BaseSaleResult
         {
             Id = saleEntity.Id
         };
 
-        _saleRepository
-            .InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>())
-            .Returns(saleEntity);
+        _saleRepository.InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>()).Returns(saleEntity);
 
-        _mapper
-            .Map<SaleResult>(saleEntity)
-            .Returns(saleResult);
+        _mapper.Map<BaseSaleResult>(saleEntity).Returns(saleResult);
 
-        // When
+        //Act
         var result = await _handler.Handle(command, CancellationToken.None);
 
-        // Then
+        // Assert
         result.Should().NotBeNull();
         result.Id.Should().Be(saleEntity.Id);
 
-        await _saleRepository
-            .Received(1)
-            .InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
+        await _saleRepository.Received(1).InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
 
-        _mapper
-            .Received(1)
-            .Map<SaleResult>(saleEntity);
+        _mapper.Received(1).Map<BaseSaleResult>(saleEntity);
     }
     
     [Fact(DisplayName = "Given invalid sale command When handling Then throws validation exception")]
@@ -82,15 +74,11 @@ public class CreateSaleHandlerTests
         var command = CreateSaleHandlerTestData.GenerateInvalidCommand();
 
         // When
-        Func<Task> act = async () =>
-            await _handler.Handle(command, CancellationToken.None);
+        Func<Task> sut = async () => await _handler.Handle(command, CancellationToken.None);
 
         // Then
-        await act.Should()
-            .ThrowAsync<ValidationException>();
+        await sut.Should().ThrowAsync<ValidationException>();
 
-        await _saleRepository
-            .DidNotReceive()
-            .InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
+        await _saleRepository.DidNotReceive().InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
     }
 }

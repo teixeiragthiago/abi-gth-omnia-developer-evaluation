@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZobQvj1x0n0=",
+  "dgSpecHash": "QdtocrtAtwo=",
   "success": true,
   "projectFilePath": "/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "/Users/thiagoteixeira/.nuget/packages/microsoft.entityframeworkcore/8.0.10/microsoft.entityframeworkcore.8.0.10.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.10/microsoft.entityframeworkcore.abstractions.8.0.10.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.10/microsoft.entityframeworkcore.analyzers.8.0.10.nupkg.sha512",
+    "/Users/thiagoteixeira/.nuget/packages/microsoft.entityframeworkcore.inmemory/8.0.0/microsoft.entityframeworkcore.inmemory.8.0.0.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/microsoft.entityframeworkcore.relational/8.0.10/microsoft.entityframeworkcore.relational.8.0.10.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/thiagoteixeira/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",

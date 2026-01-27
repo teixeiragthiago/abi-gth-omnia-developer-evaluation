@@ -18,7 +18,7 @@ public class SaleRepository : ISaleRepository
 
     public async Task<Sale> InsertAsync(Sale sale, CancellationToken ct = default)
     {
-        await using var transaction = await _context.Database.BeginTransactionAsync(ct);
+        using var transaction = await _context.Database.BeginTransactionAsync(ct);
 
         try
         {
@@ -45,7 +45,7 @@ public class SaleRepository : ISaleRepository
     public async Task<Sale?> GetByIdAsync(Guid id, CancellationToken ct = default)
     {
         return await _context.Sales
-            .Include(items => items)
+            .Include(items => items.Items)
             .FirstOrDefaultAsync(x => x.Id == id, ct);
     }
 
