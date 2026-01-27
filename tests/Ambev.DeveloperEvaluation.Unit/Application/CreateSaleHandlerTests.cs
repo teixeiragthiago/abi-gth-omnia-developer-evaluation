@@ -3,6 +3,7 @@ using Ambev.DeveloperEvaluation.Application.Sales.Base;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
+using Ambev.DeveloperEvaluation.Domain.Services.Policies;
 using Ambev.DeveloperEvaluation.Unit.Application.TestData;
 using AutoMapper;
 using FluentAssertions;
@@ -21,6 +22,7 @@ public class CreateSaleHandlerTests
     private readonly IOptions<SaleUnitOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly CreateSaleHandler _handler;
+    private readonly IDiscountPolicy _discountPolicy;
 
     public CreateSaleHandlerTests()
     {
@@ -32,7 +34,8 @@ public class CreateSaleHandlerTests
             UnitQuantity = new UnitQuantity { Min = 1, Max = 20 },
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }
         });
-        _handler = new CreateSaleHandler(_saleRepository, _mapper, _options, _logger);
+        _discountPolicy = Substitute.For<IDiscountPolicy>();
+        _handler = new CreateSaleHandler(_saleRepository, _mapper, _options, _logger, _discountPolicy);
     }
     
     [Fact(DisplayName = "Given valid sale command When handling Then returns sale result")]

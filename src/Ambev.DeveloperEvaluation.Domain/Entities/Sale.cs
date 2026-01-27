@@ -30,13 +30,29 @@ public class Sale : BaseEntity
         if (IsCancelled)
             throw new DomainException("Cannot add items to a cancelled sale.");
 
+        EnsureProductQuantityLimitIsNotExceeded(item);
+        
         _items.Add(item);
         RecalculateTotal();
+    }
+
+    private void EnsureProductQuantityLimitIsNotExceeded(SaleItem newItem)
+    {
+        var currentQuantity = _items
+            .Where(i => i.ProductId == newItem.ProductId)
+            .Sum(i => i.Quantity);
+
+        var totalQuantity = currentQuantity + newItem.Quantity;
+
+        if (totalQuantity > 20)
+            throw new DomainException(
+                $"Cannot add more than 20 identical items for product {newItem.ProductId}."
+            );
     }
     
     private void RecalculateTotal()
     {
-        TotalAmount = _items.Sum(i => i.TotalAmount);
+        TotalAmount = _items.Sum(items => items.TotalAmount);
         UpdatedAt = DateTime.UtcNow;
     }
 

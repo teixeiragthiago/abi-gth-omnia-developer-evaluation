@@ -2,6 +2,7 @@ using Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Exceptions;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
+using Ambev.DeveloperEvaluation.Domain.Services.Policies;
 using Ambev.DeveloperEvaluation.Unit.Application.TestData;
 using AutoMapper;
 using FluentAssertions;
@@ -17,13 +18,15 @@ public class IncludeSaleItemHandlerTests
     private readonly IMapper _mapper;
     private readonly ILogger<IncludeSaleItemHandler> _logger;
     private readonly IncludeSaleItemHandler _handler;
+    private readonly IDiscountPolicy _discountPolicy;
 
     public IncludeSaleItemHandlerTests()
     {
         _saleRepository = Substitute.For<ISaleRepository>();
         _mapper = Substitute.For<IMapper>();
         _logger = Substitute.For<ILogger<IncludeSaleItemHandler>>();
-        _handler = new IncludeSaleItemHandler(_saleRepository, _mapper, _logger);
+        _discountPolicy = Substitute.For<IDiscountPolicy>();
+        _handler = new IncludeSaleItemHandler(_saleRepository, _mapper, _logger, _discountPolicy);
     }
     
     [Fact(DisplayName = "Should include new saleItem when sale is valid")]

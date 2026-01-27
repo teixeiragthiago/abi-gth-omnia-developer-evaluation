@@ -2,6 +2,7 @@ using Ambev.DeveloperEvaluation.Application.Sales.Base;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Exceptions;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
+using Ambev.DeveloperEvaluation.Domain.Services.Policies;
 using Ambev.DeveloperEvaluation.ORM.Repositories;
 using AutoMapper;
 using MediatR;
@@ -14,12 +15,14 @@ public class IncludeSaleItemHandler : IRequestHandler<IncludeSaleItemCommand, Ba
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
     private readonly ILogger<IncludeSaleItemHandler> _logger;
+    private readonly IDiscountPolicy _discountPolicy;
     
-    public IncludeSaleItemHandler(ISaleRepository saleRepository, IMapper mapper, ILogger<IncludeSaleItemHandler> logger)
+    public IncludeSaleItemHandler(ISaleRepository saleRepository, IMapper mapper, ILogger<IncludeSaleItemHandler> logger, IDiscountPolicy discountPolicy)
     {
         _saleRepository = saleRepository;
         _mapper = mapper;
         _logger = logger;
+        _discountPolicy = discountPolicy;
     }
 
     public async Task<BaseSaleResult> Handle(IncludeSaleItemCommand command, CancellationToken cancellationToken)
@@ -31,8 +34,8 @@ public class IncludeSaleItemHandler : IRequestHandler<IncludeSaleItemCommand, Ba
         
         if(saleData.IsCancelled)
             throw new DomainException("Cannot include items to a cancelled sale");
-
-        decimal discountPercent = 0.01m; //TODO create method do calcualte discount
+        
+        decimal discountPercent = _discountPolicy.CalculateDiscountPercent(command.ProductId, command.Quantity);
         var saleItem  = new SaleItem(command.ProductId, command.UnitPrice, command.Quantity, discountPercent);
         saleData.AddItem(saleItem);
         

@@ -23,7 +23,6 @@ public class SaleItem : BaseEntity
         UnitPrice = unitPrice;
         Quantity = quantity;
         DiscountPercentage = discountPercentage;
-
         DiscountAmount = CalculateDiscountAmount();
         TotalAmount = CalculateTotalAmount();
     }
@@ -31,7 +30,7 @@ public class SaleItem : BaseEntity
     
     private decimal CalculateDiscountAmount()
     {
-        return (Quantity * UnitPrice) * (DiscountPercentage * 0.01m);
+        return (Quantity * UnitPrice) * DiscountPercentage;
     }
 
     private decimal CalculateTotalAmount()
