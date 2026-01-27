@@ -11,7 +11,6 @@ public class GetSaleHandler : IRequestHandler<GetSaleCommand, BaseSaleResult>
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
-    private IRequestHandler<GetSaleCommand, BaseSaleResult> _requestHandlerImplementation;
 
     public GetSaleHandler(ISaleRepository saleRepository, IMapper mapper)
     {
@@ -28,7 +27,7 @@ public class GetSaleHandler : IRequestHandler<GetSaleCommand, BaseSaleResult>
         
         return new BaseSaleResult
         {
-            
+            Id = sale.Id,
         }; //TODO map this
     }
 }

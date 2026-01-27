@@ -14,11 +14,7 @@ public class CancelSaleHandler : IRequestHandler<CancelSaleCommand, BaseSaleResu
     private readonly IMapper _mapper;
     private readonly ILogger<CancelSaleHandler> _logger;
 
-    public CancelSaleHandler(
-        ISaleRepository saleRepository,
-        ILogger<CancelSaleHandler> logger,
-        IMapper mapper
-        )
+    public CancelSaleHandler(ISaleRepository saleRepository, ILogger<CancelSaleHandler> logger, IMapper mapper)
     {
         _saleRepository = saleRepository ?? throw new ArgumentNullException(nameof(saleRepository));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -44,7 +40,7 @@ public class CancelSaleHandler : IRequestHandler<CancelSaleCommand, BaseSaleResu
 
         return new BaseSaleResult
         {
-            
+            Id = sale.Id,
         }; //TODO map this
     }
 }
