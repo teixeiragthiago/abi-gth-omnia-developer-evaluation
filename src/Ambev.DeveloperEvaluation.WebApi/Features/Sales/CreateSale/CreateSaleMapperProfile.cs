@@ -9,7 +9,7 @@ public class CreateSaleMapperProfile : Profile
     public CreateSaleMapperProfile()
     {
         CreateMap<CreateSaleRequest, CreateSaleCommand>();
-        CreateMap<SaleResult, SaleResponse>();
+        CreateMap<BaseSaleResult, SaleResponse>();
 
         CreateMap<CreateSaleItemRequest, SaleItemDto>();
         CreateMap<SaleItemResult, SaleItemDto>();

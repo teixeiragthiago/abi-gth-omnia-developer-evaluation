@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 
-public class CreateSaleCommand : IRequest<SaleResult>
+public class CreateSaleCommand : IRequest<BaseSaleResult>
 {
     public Guid CustomerId { get; set; }
     public Guid BranchId { get; set; }

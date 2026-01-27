@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 
-public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
+public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResult>
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
@@ -25,7 +25,7 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
         _logger = logger;
     }
 
-    public async Task<SaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
+    public async Task<BaseSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
     {
         var validator = new CreateSaleCommandValidator(_options.Value);
         var resultValidation = await validator.ValidateAsync(command, cancellationToken);
@@ -38,7 +38,7 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, SaleResult>
         var saleEntity = new Sale(command.CustomerId, command.BranchId);
         var sale = await _saleRepository.InsertAsync(saleEntity, cancellationToken);
         
-        var result = _mapper.Map<SaleResult>(sale); //TODO criar mapper
+        var result = _mapper.Map<BaseSaleResult>(sale); //TODO criar mapper
         
         _logger.LogInformation("Finishing handle of new sale creation");
         
