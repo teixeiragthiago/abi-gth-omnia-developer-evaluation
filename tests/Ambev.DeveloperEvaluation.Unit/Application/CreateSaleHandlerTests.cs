@@ -70,13 +70,13 @@ public class CreateSaleHandlerTests
     [Fact(DisplayName = "Given invalid sale command When handling Then throws validation exception")]
     public async Task Handle_InvalidCommand_ThrowsValidationException()
     {
-        // Given
+        //Arrange
         var command = CreateSaleHandlerTestData.GenerateInvalidCommand();
 
-        // When
+        //Act
         Func<Task> sut = async () => await _handler.Handle(command, CancellationToken.None);
 
-        // Then
+        //Assert
         await sut.Should().ThrowAsync<ValidationException>();
 
         await _saleRepository.DidNotReceive().InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());

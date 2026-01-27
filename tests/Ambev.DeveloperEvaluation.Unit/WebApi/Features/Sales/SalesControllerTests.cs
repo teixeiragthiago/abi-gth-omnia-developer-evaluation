@@ -2,9 +2,11 @@ using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
+using Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
 using Ambev.DeveloperEvaluation.Unit.WebApi.Fixtures;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem;
 using AutoMapper;
 using FluentAssertions;
 using MediatR;
@@ -74,8 +76,8 @@ public class SalesControllerTests
         result.Should().NotBeNull();
         result.Should().BeOfType<BadRequestObjectResult>();
 
-        var acceptedResult = result as BadRequestObjectResult;
-        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
+        var badRequestResult = result as BadRequestObjectResult;
+        badRequestResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
     }
     
     [Fact(DisplayName = "Sales Controller: Get Sale Must Return With Success")]
@@ -142,7 +144,68 @@ public class SalesControllerTests
 
         //Assert
 
-        var acceptedResult = result as BadRequestObjectResult;
-        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
+        var badRquestResult = result as BadRequestObjectResult;
+        badRquestResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
+    }
+    
+    [Fact(DisplayName = "Sales Controller: Include sale item Must Return With Success")]
+    public async Task IncludeSaleItem_MustReturnSucessWhenRequestIsValid()
+    {
+        //Arrange
+        var saleId = Guid.NewGuid();
+        
+        var request = new IncludeSaleItemRequest
+        {
+            ProductId = Guid.NewGuid(),
+            UnitPrice = 10m,
+            Quantity = 2
+        };
+            
+        var command = new IncludeSaleItemCommand
+        {
+            ProductId = request.ProductId,
+            UnitPrice = request.UnitPrice,
+            Quantity = request.Quantity
+        };
+        
+        await _mediator.Send(command, CancellationToken.None);
+            
+        //Act
+        var result = await _saleController.IncludeSaleItem(saleId, request, CancellationToken.None);
+
+        //Assert
+
+        var okStatusResult = result as OkResult;
+        okStatusResult!.StatusCode.Should().Be(StatusCodes.Status200OK);    
+    }
+    
+    [Fact(DisplayName = "Sales Controller: Include sale item must return bad request when request is invalid")]
+    public async Task IncludeSaleItem_MustReturnBadRequestWhenRequestIsInvalid()
+    {
+        //Arrange
+        var saleId = Guid.NewGuid();
+        
+        var request = new IncludeSaleItemRequest
+        {
+            ProductId = Guid.Empty,
+            UnitPrice = 0,
+            Quantity = 0
+        };
+            
+        var command = new IncludeSaleItemCommand
+        {
+            ProductId = request.ProductId,
+            UnitPrice = request.UnitPrice,
+            Quantity = request.Quantity
+        };        
+        await _mediator.Send(command, CancellationToken.None);
+            
+        //Act
+        var result = await _saleController.IncludeSaleItem(saleId, request, CancellationToken.None);
+
+        //Assert
+
+        var badRequstResult = result as BadRequestObjectResult;
+        badRequstResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
     }
 }

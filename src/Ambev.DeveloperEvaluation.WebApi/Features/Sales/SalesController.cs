@@ -2,11 +2,13 @@ using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
+using Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
 using Ambev.DeveloperEvaluation.Application.Users.GetUser;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -87,14 +89,29 @@ public class SalesController : BaseController
         return NoContent();
     }
     
-    [HttpPost("{id}/items")]
+    [HttpPost("{id}/include-items")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> IncludeSaleItem(
         [FromRoute] Guid id,
+        [FromBody]IncludeSaleItemRequest request,
         CancellationToken cancellationToken)
     {
-        throw  new NotImplementedException();
+        var validator = new IncludeSaleItemRequestValidator(_options.Value);
+        var resultValidation = await validator.ValidateAsync(request, cancellationToken);
+        if(!resultValidation.IsValid)
+            return BadRequest(resultValidation.Errors);
+
+        var command = new IncludeSaleItemCommand
+        {
+            ProductId = request.ProductId,
+            UnitPrice =  request.UnitPrice,
+            Quantity = request.Quantity
+        };
+        
+        await _mediator.Send(command, cancellationToken);
+
+        return Ok();
     }
 }
