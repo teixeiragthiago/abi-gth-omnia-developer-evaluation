@@ -4,8 +4,9 @@
 
 ### 🎯 Objetivo do Projeto
 
+Este projeto foi desenvolvido como parte de uma avaliação técnica para desenvolvedor sênior, com o objetivo de demonstrar domínio em .NET 8, Domain-Driven Design (DDD), CQRS, arquitetura orientada a eventos e estratégias abrangentes de testes automatizados.
 
-### ✅ Requisitos entregues
+A aplicação consiste em uma API de Vendas, responsável por gerenciar vendasß, aplicar regras inteligentes de desconto e garantir a integridade dos dados por meio de uma arquitetura desacoplada, orientada a eventos e alinhada às boas práticas de engenharia de software.
 
 
 ## 🚀 Como Rodar a Aplicação
@@ -69,9 +70,18 @@ gerado de forma idempotente)
 
 ---
 
-## 📚 API de Vendas - Funcionalidades Completas
+## 💻 API de Vendas - Funcionalidades Completas
 
-### 🎯 Regras de Negócio Implementadas
+### 📄  Requisitos solicitados
+
+- API CRUD completa para vendas
+- Regras de negócio implementadas
+- Eventos (requisito opcional)
+- Instruções completas de configuração, execução e teste
+- Código versionado em repositório público no GitHub
+- Documentação detalhada e organização profissional
+
+### 📌 Regras de Negócio Implementadas
 
 O domínio da aplicação tem por responsabilidade aplicar as seguintes regras de negócio: 
 
@@ -80,16 +90,16 @@ O domínio da aplicação tem por responsabilidade aplicar as seguintes regras d
 3. **Sem desconto**: Compras abaixo de 4 itens não têm desconto
 4. **Limite máximo**: Não é possível vender mais de 20 itens idênticos
 
-### ✅ CRUD Completo Implementado
+###  CRUD Completo Implementado
 
 - **CREATE** - Criar venda com validações de valores, quantidade e aplicar regras de negócio informadas
 - **READ** - Retonar um registro de uma venda
 - **UPDATE** - Incluir novo produto em uma venda
 - **DELETE** - Cancelar vendas (apenas alteração da flag `IsCancelled`)
 
-## 🏗️ Arquitetura e Padrões
+##  Arquitetura e Padrões
 
-### 📁 Estrutura do Projeto
+### 📁 Estrutura do Projeto Sln/pastas
 
 ```
 abi-gth-omnia-developer-evaluation/
@@ -105,7 +115,7 @@ abi-gth-omnia-developer-evaluation/
 └── docker-compose.yml                         # 🐳 Configuração de containers
 ```
 
-### 📐 Padrões Implementados
+###  Padrões Implementados
 
 - **DDD (Domain-Driven Design)** - Separação clara de domínios
 - **Entity Framework Core** - ORM com PostgreSQL
@@ -117,45 +127,42 @@ abi-gth-omnia-developer-evaluation/
 - **Logging estruturado** - Logs estruturados com Serilog
 
 
-### 🔧 Arquivos de Configuração
+### Arquivos de Configuração
 
 - **appsettings.json** - Configuração base
 - **appsettings.Development.json** - Desenvolvimento local (localhost)
 
 - **Rider**: `appsettings.Development.json` e `launchSettings.json`
 
-## 🛠️ Tecnologias e Frameworks
+##  Tecnologias e Frameworks
 
-### Core Technologies
-- **.NET 8.0** - Framework principal
-- **ASP.NET Core** - Web API
-- **Entity Framework Core** - ORM
-- **PostgreSQL** - Banco de dados relacional
-- **Docker** - Containerização
+### Tecnologias utilizadas
+- **.NET 8.0** 
+- **ASP.NET Core** 
+- **Entity Framework Core**
+- **PostgreSQL** 
+- **Docker** 
+### Bibliotecas
+- **MediatR** - Mediator pattern para CQRS e disparo de eventos
+- **AutoMapper** - Mapeamentos de classe/classe (usado parcialmente)
+- **FluentValidation** - Validações fluidas
+- **Serilog** - Logging
+- **Swagger/OpenAPI** - Documentação da api
 
-### Testing & Quality
+### 🧪 Testes 
 - **xUnit** - Framework de testes unitários
 - **FluentAssertions** - Assertions mais legíveis nos testes
 - **NSubstitute** Libraty to mock classes and objets
 - **Fixtures** Fixtures to improve mocks
 - **Coverlet** - Cobertura de código
 
-### Libraries & Patterns
-- **MediatR** - Mediator pattern para CQRS
-- **AutoMapper** - Mapeamento objeto-para-objeto
-- **FluentValidation** - Validações fluidas e declarativas
-- **Serilog** - Logging estruturado
-- **Swagger/OpenAPI** - Documentação automática da API
-
-
-
-## 🐛 Troubleshootings
+🐳 Troubleshooting – Docker no macOS
 
 ### Alterção no docker-compose.yml
 - Como eu desenvolvi em um MacOS, precisei fazer uma pequena alteração no compose para que conseguisse 
 subir os containers, uma questão simples de diretórios de OS
 
-Compose informado
+Configuração original (Windows):
 
 ```
 #    volumes: 
@@ -172,9 +179,7 @@ Compose informado
 ```
 
 
-## 📊 Score de Compliance
-
-**✅ 100% Compliant** com todos os requisitos da avaliação:
+## 📊 Objetivos atingidos
 
 ### Requisitos Obrigatórios ✅ 
 - **Repositório público** no GitHub
@@ -194,8 +199,15 @@ Compose informado
 
 ## 📋 Endpoints Disponíveis
 
+👤 Users API (Pré-existente no projeto)
+- `GET /api/Users` - Listar usuários
+- `GET /api/Users/{id}` - Obter usuário específico
+- `POST /api/Users` - Criar usuário
+- `PUT /api/Users/{id}` - Atualizar usuário
+- `DELETE /api/Users/{id}` - Excluir usuário
+
 ## Sales API
-### - `GET /api/Sales/{id}` - Obter venda específica
+### - 🔹`GET /api/Sales/{id}` - Obter venda específica
 
 #### Exemplo de requisição: 
 ```
@@ -252,7 +264,7 @@ curl --location 'https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f
 }
 ```
 
-### -`POST /api/Sales` - Criar nova venda
+### 🔹 `POST /api/Sales` - Criar nova venda
 
 #### Exemplo de requisição:
 ```
@@ -304,7 +316,7 @@ curl --location 'https://localhost:7181/api/Sales' \
 }
 ```
 
-### -`PATCH api/Sales/{saleId}/include-product`
+### 🔹`PATCH api/Sales/{saleId}/include-product`
 
 #### Exemplo de requisição:
 
@@ -367,7 +379,7 @@ curl --location --request PATCH 'https://localhost:7181/api/Sales/ae86743e-9451-
 
 ```
 
-### -`DELETE /api/Sales/{id}` - Cancelar venda
+### 🔹`DELETE /api/Sales/{id}` - Cancelar venda
 
 #### Exemplo de requisição
 
@@ -411,15 +423,7 @@ curl --location --request DELETE 'https://localhost:7181/api/Sales/f89a04ce-5b7d
 }
 ```
 
-### Users API (já pré existente no projeto)
-- `GET /api/Users` - Listar usuários
-- `GET /api/Users/{id}` - Obter usuário específico
-- `POST /api/Users` - Criar usuário
-- `PUT /api/Users/{id}` - Atualizar usuário
-- `DELETE /api/Users/{id}` - Excluir usuário
-
-
-## 🔐 Credenciais de Acesso
+🔐 Credenciais de Banco de Dados
 
 ### Banco de Dados PostgreSQL
 - **Host**: localhost (local) ou ambev.developerevaluation.database (Docker)
@@ -429,7 +433,7 @@ curl --location --request DELETE 'https://localhost:7181/api/Sales/f89a04ce-5b7d
 - **Password**: ev@luAt10n
 
 <!-- deveria ser -->
-### Branches disponíveis
+🌿 Estratégia de Branches
 - `master` - Branch principal com código estável
 - `develop` - Branch de desenvolvimento
 - `feature/{card-key}` - Para possíveis novas implementações
