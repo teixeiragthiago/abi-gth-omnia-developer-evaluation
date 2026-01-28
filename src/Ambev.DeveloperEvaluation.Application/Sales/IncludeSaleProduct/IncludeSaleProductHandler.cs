@@ -19,13 +19,18 @@ public class IncludeSaleProductHandler : IRequestHandler<IncludeSaleProductComma
     private readonly IDiscountPolicy _discountPolicy;
     private readonly IMediator _mediator;
     
-    public IncludeSaleProductHandler(ISaleRepository saleRepository, ILogger<IncludeSaleProductHandler> logger, IDiscountPolicy discountPolicy, IMediator mediator)
+    public IncludeSaleProductHandler(
+        ISaleRepository saleRepository,
+        ILogger<IncludeSaleProductHandler> logger,
+        IDiscountPolicy discountPolicy,
+        IMediator mediator)
     {
-        _saleRepository = saleRepository; //TODO exception validation
-        _logger = logger;
-        _discountPolicy = discountPolicy;
-        _mediator = mediator;
+        _saleRepository = saleRepository ?? throw new ArgumentNullException(nameof(saleRepository));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _discountPolicy = discountPolicy ?? throw new ArgumentNullException(nameof(discountPolicy));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
+
 
     public async Task<BaseSaleResult> Handle(IncludeSaleProductCommand command, CancellationToken cancellationToken)
     {

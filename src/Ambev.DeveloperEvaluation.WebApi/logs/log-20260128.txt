@@ -824,3 +824,145 @@ WHERE "Id" = @p18;
 2026-01-28 12:18:08.832 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) in 30.0877ms
 2026-01-28 12:18:08.832 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
 2026-01-28 12:18:08.833 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - 201 null application/json; charset=utf-8 37.1727ms
+2026-01-28 12:23:06.089 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-28 12:24:45.380 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-28 12:24:45.451 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-28 12:24:45.735 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-28 12:24:45.735 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-28 12:24:45.736 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-28 12:24:45.736 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-28 12:24:45.736 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-28 12:24:46.015 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-28 12:24:46.077 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 62.7228ms
+2026-01-28 12:24:46.107 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-28 12:24:46.109 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 1.8597ms
+2026-01-28 12:24:46.139 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-28 12:24:46.232 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.8556ms
+2026-01-28 12:24:47.849 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - application/json 158
+2026-01-28 12:24:47.872 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:24:47.885 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "IncludeSaleItem", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IncludeSaleItem(System.Guid, Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem.IncludeSaleProductRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:24:48.001 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:24:48.148 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem.IncludeSaleProductHandler Including item "08ad5c46-6ea9-43fb-9954-e4f597568a53" to Sale "ae86743e-9451-45b2-8c0f-133a9f5c2c9c"
+2026-01-28 12:24:49.407 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (59ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 12:24:49.505 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) in 1616.1321ms
+2026-01-28 12:24:49.506 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:24:49.545 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - 500 null text/plain; charset=utf-8 1696.0218ms
+2026-01-28 12:24:58.368 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - null null
+2026-01-28 12:24:58.374 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:24:58.378 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:24:58.379 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:24:58.410 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 12:24:58.421 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 39.0467ms.
+2026-01-28 12:24:58.426 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 12:24:58.463 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 84.7255ms
+2026-01-28 12:24:58.463 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:24:58.463 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - 200 null application/json; charset=utf-8 94.9101ms
+2026-01-28 12:25:00.550 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - application/json 249
+2026-01-28 12:25:00.551 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:00.553 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:25:00.557 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:25:00.605 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Starting Sale handle creation
+2026-01-28 12:25:00.644 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Creating new sale
+2026-01-28 12:25:00.770 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal), @p8='?' (DbType = DateTime), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?' (DbType = Decimal), @p12='?' (DbType = Decimal), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (DbType = Decimal), @p17='?' (DbType = Decimal), @p18='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Sales" ("Id", "BranchId", "CancelledAt", "CreatedAt", "CustomerId", "IsCancelled", "SaleNumber", "TotalAmount", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+INSERT INTO "SaleProduct" ("Id", "CreatedAt", "DiscountAmount", "DiscountPercentage", "ProductId", "Quantity", "SaleId", "TotalAmount", "UnitPrice", "UpdatedAt")
+VALUES (@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-01-28 12:25:00.792 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Sale created successfully "d7af2f00-120e-49a6-8774-e3687d5a1799"
+2026-01-28 12:25:00.793 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Finishing Sale handle creation "d7af2f00-120e-49a6-8774-e3687d5a1799"
+2026-01-28 12:25:00.796 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.CreatedResult in 238.6052ms.
+2026-01-28 12:25:00.796 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type '<>f__AnonymousType0`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 12:25:00.797 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 243.8578ms
+2026-01-28 12:25:00.797 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:00.798 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 201 null application/json; charset=utf-8 247.7314ms
+2026-01-28 12:25:03.605 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 DELETE https://localhost:7181/api/Sales/f89a04ce-5b7d-4dd8-9591-0404f076ba28/cancel - null null
+2026-01-28 12:25:03.606 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:03.608 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CancelSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:25:03.608 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:25:03.611 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CancelSale.CancelSaleHandler Starting cancelling sale: "f89a04ce-5b7d-4dd8-9591-0404f076ba28"
+2026-01-28 12:25:03.616 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 12:25:03.617 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Cancelling sale "f89a04ce-5b7d-4dd8-9591-0404f076ba28"
+2026-01-28 12:25:03.625 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (DbType = Guid), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Sales" SET "BranchId" = @p0, "CancelledAt" = @p1, "CreatedAt" = @p2, "CustomerId" = @p3, "IsCancelled" = @p4, "SaleNumber" = @p5, "TotalAmount" = @p6, "UpdatedAt" = @p7
+WHERE "Id" = @p8;
+2026-01-28 12:25:03.626 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Sale cancelled successfully "f89a04ce-5b7d-4dd8-9591-0404f076ba28"
+2026-01-28 12:25:03.626 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CancelSale.CancelSaleHandler Sale cancelled with success: "f89a04ce-5b7d-4dd8-9591-0404f076ba28"
+2026-01-28 12:25:03.627 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.4287ms.
+2026-01-28 12:25:03.627 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 12:25:03.628 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi) in 19.4286ms
+2026-01-28 12:25:03.628 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CancelSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:03.628 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 DELETE https://localhost:7181/api/Sales/f89a04ce-5b7d-4dd8-9591-0404f076ba28/cancel - 200 null application/json; charset=utf-8 22.8287ms
+2026-01-28 12:25:30.030 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 PATCH https://localhost:7181/api/Sales/1caa494b-43e4-4578-886f-e3aaf108fa9a/include-product - application/json 158
+2026-01-28 12:25:30.032 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:30.033 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "IncludeSaleItem", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IncludeSaleItem(System.Guid, Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem.IncludeSaleProductRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:25:30.034 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:25:30.035 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem.IncludeSaleProductHandler Including item "08ad5c46-6ea9-43fb-9954-e4f597568a53" to Sale "1caa494b-43e4-4578-886f-e3aaf108fa9a"
+2026-01-28 12:25:30.049 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 12:25:30.050 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) in 17.5096ms
+2026-01-28 12:25:30.050 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:30.055 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 PATCH https://localhost:7181/api/Sales/1caa494b-43e4-4578-886f-e3aaf108fa9a/include-product - 500 null text/plain; charset=utf-8 24.3747ms
+2026-01-28 12:25:41.958 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - application/json 160
+2026-01-28 12:25:41.960 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:41.960 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "IncludeSaleItem", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IncludeSaleItem(System.Guid, Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem.IncludeSaleProductRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 12:25:41.962 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 12:25:41.965 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem.IncludeSaleProductHandler Including item "1caa494b-43e4-4578-886f-e3aaf108fa9a" to Sale "ae86743e-9451-45b2-8c0f-133a9f5c2c9c"
+2026-01-28 12:25:41.977 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 12:25:41.981 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Cancelling sale "ae86743e-9451-45b2-8c0f-133a9f5c2c9c"
+2026-01-28 12:25:41.992 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = Guid), @p5='?' (DbType = Int32), @p6='?' (DbType = Guid), @p7='?' (DbType = Decimal), @p8='?' (DbType = Decimal), @p9='?' (DbType = DateTime), @p18='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime), @p12='?' (DbType = DateTime), @p13='?' (DbType = Guid), @p14='?' (DbType = Boolean), @p15='?' (DbType = Int32), @p16='?' (DbType = Decimal), @p17='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "SaleProduct" ("Id", "CreatedAt", "DiscountAmount", "DiscountPercentage", "ProductId", "Quantity", "SaleId", "TotalAmount", "UnitPrice", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+UPDATE "Sales" SET "BranchId" = @p10, "CancelledAt" = @p11, "CreatedAt" = @p12, "CustomerId" = @p13, "IsCancelled" = @p14, "SaleNumber" = @p15, "TotalAmount" = @p16, "UpdatedAt" = @p17
+WHERE "Id" = @p18;
+2026-01-28 12:25:41.999 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Sale cancelled successfully "ae86743e-9451-45b2-8c0f-133a9f5c2c9c"
+2026-01-28 12:25:41.999 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem.IncludeSaleProductHandler Item "1caa494b-43e4-4578-886f-e3aaf108fa9a" included to sale "ae86743e-9451-45b2-8c0f-133a9f5c2c9c" wit success!
+2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.CreatedResult in 38.0695ms.
+2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type '<>f__AnonymousType0`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi) in 40.3129ms
+2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - 201 null application/json; charset=utf-8 43.4746ms
+2026-01-28 12:25:47.560 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
