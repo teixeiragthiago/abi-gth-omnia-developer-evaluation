@@ -54,9 +54,8 @@ e precisa gerar o script das migrations de forma idempotente e passar para um DB
 # 1. Configurar apenas o banco de dados via Docker
 docker-compose up ambev.developerevaluation.database -d
 
-# 2. Aplicar migrações (se necessário)
+# 2. Aplicar migrações (se necessário, visto que o projeto está com automigrate, então a o build da app deve fazer isso ao executar.)
 dotnet ef database update --project src/Ambev.DeveloperEvaluation.ORM --startup-project src/Ambev.DeveloperEvaluation.WebApi
-
 (ou se preferir rodar o script SQL disponível na pasta ORM/Sripts que é basicamente o script da migration 
 gerado de forma idempotente)
 
@@ -66,8 +65,8 @@ gerado de forma idempotente)
 #### Configurações Rider (IDE utilizada para o desenvolvimento):
 - **Perfil**: Development
 - **String de conexão**: `Host=localhost;Port=5432;Database=developer_evaluation;Username=developer;Password=ev@luAt10n`
-- **Migrações**: Podem ser aplicadas com o CLI do ef core, com `dotnet ef database update "MigrationName" `
-
+- **Migrações**: Podem ser aplicadas com o CLI do ef core, com `dotnet ef database update "MigrationName"`, mas o projeto também está com auto-migrate. Além de que também gerei o script da última
+para caso queira visualizar o script da mesma.
 ---
 
 ## 💻 API de Vendas - Funcionalidades Completas

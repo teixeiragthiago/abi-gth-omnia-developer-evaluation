@@ -980,3 +980,84 @@ WHERE "Id" = @p18;
 2026-01-28 12:26:39.752 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
 2026-01-28 12:26:39.872 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 119.4753ms
 2026-01-28 12:29:28.001 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-28 16:01:02.342 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-01-28 16:01:02.393 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-01-28 16:01:02.408 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-01-28 16:01:02.418 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-01-28 16:01:02.419 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-01-28 16:01:02.426 -03:00 [INF] Microsoft.EntityFrameworkCore.Migrations No migrations were applied. The database is already up to date.
+2026-01-28 16:01:02.432 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-28 16:01:02.462 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-28 16:01:02.715 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-28 16:01:02.715 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-28 16:01:02.716 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-28 16:01:02.716 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-28 16:01:02.716 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-28 16:01:03.315 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-28 16:01:03.387 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 73.0222ms
+2026-01-28 16:01:03.408 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-28 16:01:03.412 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.4896ms
+2026-01-28 16:01:03.447 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-28 16:01:03.536 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.8271ms
+2026-01-28 16:01:08.690 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - null null
+2026-01-28 16:01:08.714 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 16:01:08.732 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 16:01:08.819 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 16:01:09.132 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 16:01:09.211 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 390.1196ms.
+2026-01-28 16:01:09.217 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 16:01:09.266 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 530.1633ms
+2026-01-28 16:01:09.267 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 16:01:09.273 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - 200 null application/json; charset=utf-8 583.2731ms
+2026-01-28 16:01:11.772 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - application/json 249
+2026-01-28 16:01:11.776 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 16:01:11.778 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 16:01:11.791 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 16:01:11.857 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Starting Sale handle creation
+2026-01-28 16:01:11.892 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Creating new sale
+2026-01-28 16:01:12.017 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal), @p8='?' (DbType = DateTime), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?' (DbType = Decimal), @p12='?' (DbType = Decimal), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (DbType = Decimal), @p17='?' (DbType = Decimal), @p18='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Sales" ("Id", "BranchId", "CancelledAt", "CreatedAt", "CustomerId", "IsCancelled", "SaleNumber", "TotalAmount", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+INSERT INTO "SaleProduct" ("Id", "CreatedAt", "DiscountAmount", "DiscountPercentage", "ProductId", "Quantity", "SaleId", "TotalAmount", "UnitPrice", "UpdatedAt")
+VALUES (@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-01-28 16:01:12.039 -03:00 [INF] Ambev.DeveloperEvaluation.ORM.Repositories.SaleRepository Sale created successfully "4ea78ff8-9ace-48df-9cbc-59f8f5fb9ca0"
+2026-01-28 16:01:12.040 -03:00 [INF] Ambev.DeveloperEvaluation.Application.Sales.CreateSale.CreateSaleHandler Finishing Sale handle creation "4ea78ff8-9ace-48df-9cbc-59f8f5fb9ca0"
+2026-01-28 16:01:12.042 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.CreatedResult in 250.6405ms.
+2026-01-28 16:01:12.042 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type '<>f__AnonymousType0`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 16:01:12.044 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 265.6257ms
+2026-01-28 16:01:12.044 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 16:01:12.044 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 201 null application/json; charset=utf-8 271.979ms
+2026-01-28 16:01:16.078 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
