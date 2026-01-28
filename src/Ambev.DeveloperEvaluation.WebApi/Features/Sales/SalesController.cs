@@ -70,7 +70,7 @@ public class SalesController : BaseController
         return Ok(response.ToResponse());
     }
     
-    [HttpPost("{id:guid}/cancel")]
+    [HttpDelete("{id:guid}/cancel")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> CancelSale([FromRoute] Guid id, CancellationToken cancellationToken)
@@ -87,7 +87,7 @@ public class SalesController : BaseController
         return Ok(result.ToResponse());
     }
     
-    [HttpPost("{saleId:guid}/include-items")]
+    [HttpPatch("{saleId:guid}/include-product")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]

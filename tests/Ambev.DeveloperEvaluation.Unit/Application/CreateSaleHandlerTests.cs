@@ -1,6 +1,7 @@
 using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.Base;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.Application.Sales.Notifications;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
 using Ambev.DeveloperEvaluation.Domain.Services.Policies;
@@ -8,6 +9,7 @@ using Ambev.DeveloperEvaluation.Unit.Application.TestData;
 using AutoMapper;
 using FluentAssertions;
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NSubstitute;
@@ -22,6 +24,8 @@ public class CreateSaleHandlerTests
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly CreateSaleHandler _handler;
     private readonly IDiscountPolicy _discountPolicy;
+    private readonly IMediator _mediator;
+
 
     public CreateSaleHandlerTests()
     {
@@ -33,7 +37,8 @@ public class CreateSaleHandlerTests
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }
         });
         _discountPolicy = Substitute.For<IDiscountPolicy>();
-        _handler = new CreateSaleHandler(_saleRepository, _options, _logger, _discountPolicy);
+        _mediator = Substitute.For<IMediator>();
+        _handler = new CreateSaleHandler(_saleRepository, _options, _logger, _discountPolicy, _mediator);
     }
     
     [Fact(DisplayName = "Given valid sale command When handling Then returns sale result")]
@@ -54,6 +59,10 @@ public class CreateSaleHandlerTests
 
         _saleRepository.InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>()).Returns(saleEntity);
 
+        _mediator
+            .Publish(Arg.Any<SaleCreatedNotification>(), Arg.Any<CancellationToken>())
+            .Returns(Task.CompletedTask);
+        
         //Act
         var result = await _handler.Handle(command, CancellationToken.None);
 
@@ -62,6 +71,7 @@ public class CreateSaleHandlerTests
         result.Id.Should().Be(saleEntity.Id);
 
         await _saleRepository.Received(1).InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
+        await _mediator.Received(1).Publish(Arg.Any<SaleCreatedNotification>(), Arg.Any<CancellationToken>());
     }
     
     [Fact(DisplayName = "Given invalid sale command When handling Then throws validation exception")]
@@ -77,5 +87,7 @@ public class CreateSaleHandlerTests
         await sut.Should().ThrowAsync<ValidationException>();
 
         await _saleRepository.DidNotReceive().InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
+        await _mediator.DidNotReceive().Publish(Arg.Any<SaleCreatedNotification>(), Arg.Any<CancellationToken>());
+        
     }
 }

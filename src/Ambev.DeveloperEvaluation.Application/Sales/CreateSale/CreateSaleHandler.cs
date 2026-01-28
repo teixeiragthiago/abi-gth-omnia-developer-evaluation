@@ -1,5 +1,6 @@
 using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.Base;
+using Ambev.DeveloperEvaluation.Application.Sales.Notifications;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
 using Ambev.DeveloperEvaluation.Domain.Services.Policies;
@@ -17,13 +18,15 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
     private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly IDiscountPolicy _discountPolicy;
+    private readonly IMediator _mediator;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy)
+    public CreateSaleHandler(ISaleRepository saleRepository, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy,  IMediator mediator)
     {
         _saleRepository = saleRepository;
         _options = options;
         _logger = logger;
         _discountPolicy = discountPolicy;
+        _mediator = mediator;
     }
 
     public async Task<BaseSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
@@ -40,7 +43,9 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
         
         var persistedSale = await _saleRepository.InsertAsync(sale, cancellationToken);
         _logger.LogInformation("Finishing Sale handle creation {SaleId}", persistedSale.Id);
-
+        
+        await _mediator.Publish(new SaleCreatedNotification(persistedSale.Id, DateTime.UtcNow), cancellationToken);
+        
         return persistedSale.ToResult();
     }
 

@@ -1,5 +1,6 @@
 using Ambev.DeveloperEvaluation.Application.Sales.Base;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.Application.Sales.Notifications;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Exceptions;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
@@ -16,12 +17,14 @@ public class IncludeSaleProductHandler : IRequestHandler<IncludeSaleProductComma
     private readonly ISaleRepository _saleRepository;
     private readonly ILogger<IncludeSaleProductHandler> _logger;
     private readonly IDiscountPolicy _discountPolicy;
+    private readonly IMediator _mediator;
     
-    public IncludeSaleProductHandler(ISaleRepository saleRepository, ILogger<IncludeSaleProductHandler> logger, IDiscountPolicy discountPolicy)
+    public IncludeSaleProductHandler(ISaleRepository saleRepository, ILogger<IncludeSaleProductHandler> logger, IDiscountPolicy discountPolicy, IMediator mediator)
     {
-        _saleRepository = saleRepository;
+        _saleRepository = saleRepository; //TODO exception validation
         _logger = logger;
         _discountPolicy = discountPolicy;
+        _mediator = mediator;
     }
 
     public async Task<BaseSaleResult> Handle(IncludeSaleProductCommand command, CancellationToken cancellationToken)
@@ -42,6 +45,8 @@ public class IncludeSaleProductHandler : IRequestHandler<IncludeSaleProductComma
 
         _logger.LogInformation("Item {ProductId} included to sale {SaleId} wit success!", command.ProductId,
             command.SaleId);
+        
+        await _mediator.Publish(new SaleProductIncludedNotification(command.SaleId, command.ProductId, command.Quantity, command.UnitPrice), cancellationToken);
 
         return updatedSale.ToResult();
     }
