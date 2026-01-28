@@ -9,8 +9,8 @@ public static class SaleRepositoryDataFixture
     public static Sale CreateValidSale()
         => new Sale(Guid.NewGuid(), Guid.NewGuid());
 
-    public static SaleItem CreateValidSaleItem(decimal unitPrice, int quantity, decimal discount)
-        => new SaleItem(Guid.NewGuid(), unitPrice, quantity, discount);
+    public static SaleProduct CreateValidSaleItem(decimal unitPrice, int quantity, decimal discount)
+        => new SaleProduct(Guid.NewGuid(), unitPrice, quantity, discount);
 
     public static Sale CreateSaleWithItems()
     {

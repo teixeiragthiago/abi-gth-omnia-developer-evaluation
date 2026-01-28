@@ -12,5 +12,5 @@ public record BaseSaleResult
     public bool IsCancelled { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
-    public IEnumerable<SaleItemResult> Items { get; set; } = [];
+    public IEnumerable<SaleProductResult> Products { get; set; } = Enumerable.Empty<SaleProductResult>();
 }

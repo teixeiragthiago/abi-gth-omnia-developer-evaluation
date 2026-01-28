@@ -1,7 +1,9 @@
 using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.Base;
+using Ambev.DeveloperEvaluation.Application.Sales.Notifications;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
+using Ambev.DeveloperEvaluation.Domain.Services.Policies;
 using AutoMapper;
 using FluentValidation;
 using MediatR;
@@ -13,16 +15,18 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResult>
 {
     private readonly ISaleRepository _saleRepository;
-    private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
+    private readonly IDiscountPolicy _discountPolicy;
+    private readonly IMediator _mediator;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, IOptions<SaleUnitOptions> options, ILogger<CreateSaleHandler> logger)
+    public CreateSaleHandler(ISaleRepository saleRepository, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy,  IMediator mediator)
     {
         _saleRepository = saleRepository;
-        _mapper = mapper;
         _options = options;
         _logger = logger;
+        _discountPolicy = discountPolicy;
+        _mediator = mediator;
     }
 
     public async Task<BaseSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
@@ -33,32 +37,34 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
         if (!resultValidation.IsValid)
             throw new ValidationException(resultValidation.Errors);
         
-        _logger.LogInformation("Starting handle of new sale creation");
+        _logger.LogInformation("Starting Sale handle creation");
 
-        var saleEntity = new Sale(command.CustomerId, command.BranchId);
-        var sale = await _saleRepository.InsertAsync(saleEntity, cancellationToken);
+        var sale = MapSaleFromCommandToEntity(command);
         
-        var result = _mapper.Map<BaseSaleResult>(sale); //TODO criar mapper
+        var persistedSale = await _saleRepository.InsertAsync(sale, cancellationToken);
+        _logger.LogInformation("Finishing Sale handle creation {SaleId}", persistedSale.Id);
         
-        _logger.LogInformation("Finishing handle of new sale creation");
+        await _mediator.Publish(new SaleCreatedNotification(persistedSale.Id, DateTime.UtcNow), cancellationToken);
         
-        return result;
+        return persistedSale.ToResult();
     }
 
-    private Sale MapeSaleFromCommandToEntity(CreateSaleCommand command)
+    private Sale MapSaleFromCommandToEntity(CreateSaleCommand command)
     {
-        var saleEntity = new Sale(command.CustomerId, command.BranchId);
+        var sale = new Sale(command.CustomerId, command.BranchId);
         
-        foreach (var item in command.Items)
+        foreach (var prod in command.Products)
         {
-            var saleItem = new SaleItem(
-                item.ProductId,
-                item.UnitPrice,
-                item.Quantity,
-                1 //TODO calculate
+            var saleProducts = new SaleProduct(
+                prod.ProductId,
+                prod.UnitPrice,
+                prod.Quantity,
+                _discountPolicy.CalculateDiscountPercent(prod.ProductId, prod.Quantity)
             );
+            
+            sale.AddItem(saleProducts);
         }
         
-        return saleEntity;
+        return sale;
     }
 }

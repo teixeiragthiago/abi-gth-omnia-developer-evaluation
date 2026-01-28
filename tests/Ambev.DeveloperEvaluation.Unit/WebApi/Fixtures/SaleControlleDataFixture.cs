@@ -4,18 +4,18 @@ namespace Ambev.DeveloperEvaluation.Unit.WebApi.Fixtures;
 
 public static class SaleControlleDataFixture
 {
-    public static CreateSaleRequest CreateValidSale(List<CreateSaleItemRequest> items)
+    public static CreateSaleRequest CreateValidSale(List<CreateSaleProductRequest> items)
     {
         return new CreateSaleRequest
         {
             CustomerId =  Guid.NewGuid(),
             BranchId = Guid.NewGuid(),
-            Items = items
+            Products = items
         };
     }
 
-    public static CreateSaleItemRequest CreateValidSaleItem(int quantity, int unitPrice)
+    public static CreateSaleProductRequest CreateValidSaleItem(int quantity, int unitPrice)
     {
-        return new CreateSaleItemRequest{ ProductId = Guid.NewGuid(), Quantity = quantity, UnitPrice = unitPrice  };
+        return new CreateSaleProductRequest{ ProductId = Guid.NewGuid(), Quantity = quantity, UnitPrice = unitPrice  };
     }
 }

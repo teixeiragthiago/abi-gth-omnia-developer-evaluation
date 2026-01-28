@@ -7,5 +7,5 @@ public class CreateSaleCommand : IRequest<BaseSaleResult>
 {
     public Guid CustomerId { get; set; }
     public Guid BranchId { get; set; }
-    public IEnumerable<SaleItemDto> Items { get; set; } = Enumerable.Empty<SaleItemDto>();
+    public IEnumerable<SaleProductDto> Products { get; set; } = Enumerable.Empty<SaleProductDto>();
 }

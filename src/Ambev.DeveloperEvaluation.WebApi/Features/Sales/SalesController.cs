@@ -2,11 +2,12 @@ using Ambev.DeveloperEvaluation.Application.Options;
 using Ambev.DeveloperEvaluation.Application.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
-using Ambev.DeveloperEvaluation.Application.Users.GetUser;
+using Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -14,16 +15,18 @@ using Microsoft.Extensions.Options;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales;
 
+[ApiController]
+[Route("api/[controller]")]
 public class SalesController : BaseController
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
 
     public SalesController(
         IMediator mediator,
         IMapper mapper,
-        IOptions<SaleUnitOptions> options)
+        IOptions<SaleProductOptions> options)
     {
         _mediator = mediator;
         _mapper = mapper;
@@ -31,7 +34,7 @@ public class SalesController : BaseController
     }
     
     [HttpPost]
-    // [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateSale([FromBody] CreateSaleRequest request, CancellationToken cancellationToken)
     {
@@ -45,11 +48,11 @@ public class SalesController : BaseController
         
         return Created(string.Empty, new
         {
-            Data = result
+            Data = result.ToResponse()
         });
      }
     
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -64,13 +67,10 @@ public class SalesController : BaseController
         var command = new GetSaleCommand{Id = id};
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new
-        {
-            Data = response
-        });
+        return Ok(response.ToResponse());
     }
     
-    [HttpPost("{id}/cancel")]
+    [HttpDelete("{id:guid}/cancel")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> CancelSale([FromRoute] Guid id, CancellationToken cancellationToken)
@@ -82,19 +82,38 @@ public class SalesController : BaseController
             return BadRequest(resultValidation.Errors);
 
         var command = new CancelSaleCommand{ Id = id};
-        await _mediator.Send(command, cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken);
         
-        return NoContent();
+        return Ok(result.ToResponse());
     }
     
-    [HttpPost("{id}/items")]
+    [HttpPatch("{saleId:guid}/include-product")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> IncludeSaleItem(
-        [FromRoute] Guid id,
+        [FromRoute] Guid saleId,
+        [FromBody]IncludeSaleProductRequest request,
         CancellationToken cancellationToken)
     {
-        throw  new NotImplementedException();
+        var validator = new IncludeSaleProductRequestValidator(_options.Value);
+        var resultValidation = await validator.ValidateAsync(request, cancellationToken);
+        if(!resultValidation.IsValid)
+            return BadRequest(resultValidation.Errors);
+
+        var command = new IncludeSaleProductCommand
+        {
+            SaleId = saleId,
+            ProductId = request.ProductId,
+            UnitPrice =  request.UnitPrice,
+            Quantity = request.Quantity
+        };
+        
+        var result = await _mediator.Send(command, cancellationToken);
+
+        return Created(string.Empty, new
+        {
+            Data = result.ToResponse()
+        });
     }
 }

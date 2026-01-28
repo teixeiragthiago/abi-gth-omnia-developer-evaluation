@@ -1,11 +1,3 @@
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.csproj.AssemblyReference.cache
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.AssemblyInfoInputs.cache
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.AssemblyInfo.cs
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.csproj.CoreCompileInputs.cache
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.MvcApplicationPartsAssemblyInfo.cs
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.MvcApplicationPartsAssemblyInfo.cache
-/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.sourcelink.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/appsettings.Development.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/appsettings.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi
@@ -137,6 +129,14 @@
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/Ambev.DeveloperEvaluation.Common.pdb
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/Ambev.DeveloperEvaluation.Domain.pdb
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/bin/Debug/net8.0/Ambev.DeveloperEvaluation.ORM.pdb
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.csproj.AssemblyReference.cache
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.AssemblyInfoInputs.cache
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.AssemblyInfo.cs
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.csproj.CoreCompileInputs.cache
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/Ambev.DeveloperEvaluation.WebApi.sourcelink.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/staticwebassets.build.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/staticwebassets.development.json
 /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi/obj/Debug/net8.0/staticwebassets/msbuild.Ambev.DeveloperEvaluation.WebApi.Microsoft.AspNetCore.StaticWebAssets.props

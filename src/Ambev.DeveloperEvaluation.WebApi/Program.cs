@@ -37,7 +37,7 @@ public class Program
                 )
             );
             
-            builder.Services.Configure<SaleUnitOptions>(builder.Configuration.GetSection("SaleUnitOptions"));
+            builder.Services.Configure<SaleProductOptions>(builder.Configuration.GetSection(nameof(SaleProductOptions)));
 
             builder.Services.AddJwtAuthentication(builder.Configuration);
 
