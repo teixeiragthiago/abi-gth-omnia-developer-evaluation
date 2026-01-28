@@ -34,7 +34,7 @@ public class SalesController : BaseController
     }
     
     [HttpPost]
-    // [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateSale([FromBody] CreateSaleRequest request, CancellationToken cancellationToken)
     {
@@ -52,7 +52,7 @@ public class SalesController : BaseController
         });
      }
     
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -70,7 +70,7 @@ public class SalesController : BaseController
         return Ok(response.ToResponse());
     }
     
-    [HttpPost("{id}/cancel")]
+    [HttpPost("{id:guid}/cancel")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> CancelSale([FromRoute] Guid id, CancellationToken cancellationToken)
@@ -87,7 +87,7 @@ public class SalesController : BaseController
         return Ok(result.ToResponse());
     }
     
-    [HttpPost("{saleId}/include-items")]
+    [HttpPost("{saleId:guid}/include-items")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]

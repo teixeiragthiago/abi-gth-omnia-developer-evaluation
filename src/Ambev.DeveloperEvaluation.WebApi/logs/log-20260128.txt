@@ -497,3 +497,100 @@ ORDER BY t."Id"
 2026-01-28 02:37:29.056 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
 2026-01-28 02:37:29.067 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - 200 null application/json; charset=utf-8 1638.5913ms
 2026-01-28 02:37:41.272 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-28 02:57:34.083 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-28 02:57:34.159 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-28 02:57:34.500 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-28 02:57:34.500 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-28 02:57:34.501 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-28 02:57:34.501 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-28 02:57:34.501 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-28 02:57:34.898 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-28 02:57:34.969 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 71.8689ms
+2026-01-28 02:57:35.011 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-28 02:57:35.013 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.0156ms
+2026-01-28 02:57:35.044 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-28 02:57:35.154 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 109.2142ms
+2026-01-28 02:57:52.457 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-28 02:57:56.168 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-28 02:57:56.248 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-28 02:57:56.574 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-28 02:57:56.574 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-28 02:57:56.574 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-28 02:57:56.574 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-28 02:57:56.574 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-28 02:57:57.075 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-28 02:57:57.135 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 60.7415ms
+2026-01-28 02:57:57.152 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-28 02:57:57.153 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 1.7381ms
+2026-01-28 02:57:57.187 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-28 02:57:57.272 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.4644ms
+2026-01-28 02:58:04.569 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - null null
+2026-01-28 02:58:04.602 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:04.618 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 02:58:04.702 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 02:58:05.838 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (59ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 02:58:05.939 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1233.6478ms.
+2026-01-28 02:58:05.945 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 02:58:05.996 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 1375.3466ms
+2026-01-28 02:58:05.997 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:06.008 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - 200 null application/json; charset=utf-8 1438.9163ms
+2026-01-28 02:58:10.075 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ - null null
+2026-01-28 02:58:10.077 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:10.077 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:10.077 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ - 405 0 null 1.4766ms
+2026-01-28 02:58:13.819 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales - null null
+2026-01-28 02:58:13.826 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:13.827 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:13.827 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales - 405 0 null 7.875ms
+2026-01-28 02:58:17.911 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ - null null
+2026-01-28 02:58:17.912 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:17.912 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:17.912 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ - 405 0 null 1.1331ms
+2026-01-28 02:58:19.681 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/32131321 - null null
+2026-01-28 02:58:19.683 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/32131321 - 404 0 null 2.2791ms
+2026-01-28 02:58:19.685 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7181/api/Sales/32131321, Response status code: 404
+2026-01-28 02:58:20.963 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/32131321 - null null
+2026-01-28 02:58:20.966 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/32131321 - 404 0 null 3.0086ms
+2026-01-28 02:58:20.967 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7181/api/Sales/32131321, Response status code: 404
+2026-01-28 02:58:30.691 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales - null 0
+2026-01-28 02:58:30.692 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:30.695 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 02:58:30.699 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2026-01-28 02:58:30.711 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 15.3994ms
+2026-01-28 02:58:30.711 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:30.711 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales - 415 null application/problem+json; charset=utf-8 19.6725ms
+2026-01-28 02:58:36.187 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales/32131 - null 0
+2026-01-28 02:58:36.188 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:36.188 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint '405 HTTP Method Not Supported'
+2026-01-28 02:58:36.188 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales/32131 - 405 0 null 0.9038ms
+2026-01-28 02:58:44.147 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST https://localhost:7181/api/Sales/123/include-items - application/json 160
+2026-01-28 02:58:44.149 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST https://localhost:7181/api/Sales/123/include-items - 404 0 null 1.4206ms
+2026-01-28 02:58:44.149 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7181/api/Sales/123/include-items, Response status code: 404
+2026-01-28 02:58:56.173 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - null null
+2026-01-28 02:58:56.174 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:56.174 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2026-01-28 02:58:56.175 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executing action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) - Validation state: "Valid"
+2026-01-28 02:58:56.195 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."CancelledAt", t."CreatedAt", t."CustomerId", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedAt", s0."Id", s0."CreatedAt", s0."DiscountAmount", s0."DiscountPercentage", s0."ProductId", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice", s0."UpdatedAt"
+FROM (
+    SELECT s."Id", s."BranchId", s."CancelledAt", s."CreatedAt", s."CustomerId", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedAt"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleProduct" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2026-01-28 02:58:56.197 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action method Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 21.6481ms.
+2026-01-28 02:58:56.197 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.SaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-28 02:58:56.198 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 23.4512ms
+2026-01-28 02:58:56.198 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2026-01-28 02:58:56.198 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c - 200 null application/json; charset=utf-8 24.7847ms
