@@ -187,10 +187,10 @@ Compose informado
 
 #### Disparo de eventos
 
-* SaleCreated
-* SaleModified
-* SaleCancelled
-* ItemCancelled
+* SaleCreated - ok
+* SaleModified (included item) - ok
+* SaleCancelled - ok
+* ItemCancelled ? - não implementado
 
 ## 📋 Endpoints Disponíveis
 

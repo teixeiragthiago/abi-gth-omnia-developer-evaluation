@@ -20,13 +20,18 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
     private readonly IDiscountPolicy _discountPolicy;
     private readonly IMediator _mediator;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy,  IMediator mediator)
+    public CreateSaleHandler(
+        ISaleRepository saleRepository,
+        IOptions<SaleProductOptions> options,
+        ILogger<CreateSaleHandler> logger,
+        IDiscountPolicy discountPolicy,
+        IMediator mediator)
     {
-        _saleRepository = saleRepository;
-        _options = options;
-        _logger = logger;
-        _discountPolicy = discountPolicy;
-        _mediator = mediator;
+        _saleRepository = saleRepository ?? throw new ArgumentNullException(nameof(saleRepository));
+        _options = options ?? throw new ArgumentNullException(nameof(options));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _discountPolicy = discountPolicy ?? throw new ArgumentNullException(nameof(discountPolicy));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
     public async Task<BaseSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
