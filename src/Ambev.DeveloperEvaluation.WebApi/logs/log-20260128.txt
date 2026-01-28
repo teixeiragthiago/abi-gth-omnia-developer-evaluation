@@ -966,3 +966,17 @@ WHERE "Id" = @p18;
 2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.IncludeSaleItem (Ambev.DeveloperEvaluation.WebApi)'
 2026-01-28 12:25:42.001 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 PATCH https://localhost:7181/api/Sales/ae86743e-9451-45b2-8c0f-133a9f5c2c9c/include-product - 201 null application/json; charset=utf-8 43.4746ms
 2026-01-28 12:25:47.560 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2026-01-28 12:26:39.026 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2026-01-28 12:26:39.099 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using '/Users/thiagoteixeira/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-01-28 12:26:39.384 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2026-01-28 12:26:39.385 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2026-01-28 12:26:39.385 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2026-01-28 12:26:39.385 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2026-01-28 12:26:39.385 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: /Users/thiagoteixeira/Documents/ciandt/abi-gth-omnia-developer-evaluation/src/Ambev.DeveloperEvaluation.WebApi
+2026-01-28 12:26:39.621 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2026-01-28 12:26:39.683 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 62.613ms
+2026-01-28 12:26:39.707 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2026-01-28 12:26:39.713 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.7773ms
+2026-01-28 12:26:39.752 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2026-01-28 12:26:39.872 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 119.4753ms
+2026-01-28 12:29:28.001 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
