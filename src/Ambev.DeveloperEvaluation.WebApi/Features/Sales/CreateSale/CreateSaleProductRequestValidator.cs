@@ -6,7 +6,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 
 public class CreateSaleItemRequestValidator : AbstractValidator<CreateSaleItemRequest>
 {
-    public CreateSaleItemRequestValidator(SaleUnitOptions options)
+    public CreateSaleItemRequestValidator(SaleProductOptions options)
     {
         RuleFor(saleItem => saleItem.ProductId)
             .NotEmpty();
