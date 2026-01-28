@@ -7,7 +7,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.IncludeSaleItem;
 public class IncludeSaleProductRequestValidator : AbstractValidator<IncludeSaleProductRequest>
 {
  
-    public IncludeSaleProductRequestValidator(SaleUnitOptions options)
+    public IncludeSaleProductRequestValidator(SaleProductOptions options)
     {
         RuleFor(saleItem => saleItem.ProductId)
             .NotEmpty();

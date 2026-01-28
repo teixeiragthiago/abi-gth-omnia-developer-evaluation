@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ambev.DeveloperEvaluation.ORM.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20260128001915_IncludeSaleAndSaleProduct")]
+    [Migration("20260128013412_IncludeSaleAndSaleProduct")]
     partial class IncludeSaleAndSaleProduct
     {
         /// <inheritdoc />

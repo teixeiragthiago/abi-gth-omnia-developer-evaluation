@@ -1,6 +1,6 @@
 namespace Ambev.DeveloperEvaluation.Application.Options;
 
-public record SaleUnitOptions
+public record SaleProductOptions
 {
     public UnitPrice UnitPrice { get; set; }
     public UnitQuantity UnitQuantity { get; set; }

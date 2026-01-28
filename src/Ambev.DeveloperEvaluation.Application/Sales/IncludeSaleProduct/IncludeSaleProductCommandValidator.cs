@@ -6,7 +6,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
 
 public class IncludeSaleProductCommandValidator : AbstractValidator<IncludeSaleProductCommand>
 {
-    public IncludeSaleProductCommandValidator(SaleUnitOptions options)
+    public IncludeSaleProductCommandValidator(SaleProductOptions options)
     {
         RuleFor(saleItem => saleItem.ProductId)
             .NotEmpty();

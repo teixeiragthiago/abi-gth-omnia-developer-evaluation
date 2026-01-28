@@ -16,16 +16,18 @@ using Microsoft.Extensions.Options;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales;
 
+[ApiController]
+[Route("api/[controller]")]
 public class SalesController : BaseController
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
 
     public SalesController(
         IMediator mediator,
         IMapper mapper,
-        IOptions<SaleUnitOptions> options)
+        IOptions<SaleProductOptions> options)
     {
         _mediator = mediator;
         _mapper = mapper;
@@ -89,12 +91,12 @@ public class SalesController : BaseController
         return NoContent();
     }
     
-    [HttpPost("{id}/include-items")]
+    [HttpPost("{saleId}/include-items")]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> IncludeSaleItem(
-        [FromRoute] Guid id,
+        [FromRoute] Guid saleId,
         [FromBody]IncludeSaleProductRequest request,
         CancellationToken cancellationToken)
     {
@@ -105,6 +107,7 @@ public class SalesController : BaseController
 
         var command = new IncludeSaleProductCommand
         {
+            SaleId = saleId,
             ProductId = request.ProductId,
             UnitPrice =  request.UnitPrice,
             Quantity = request.Quantity

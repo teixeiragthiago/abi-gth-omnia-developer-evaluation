@@ -9,11 +9,11 @@ namespace Ambev.DeveloperEvaluation.Unit.WebApi.Features.Sales.CreateSale;
 public class CreateSaleRequestValidatorTests
 {
     private readonly CreateSaleRequestValidator _validator;
-    private readonly SaleUnitOptions _options;
+    private readonly SaleProductOptions _options;
 
     public CreateSaleRequestValidatorTests()
     {
-        _options = new SaleUnitOptions
+        _options = new SaleProductOptions
         {
             UnitQuantity = new UnitQuantity { Min = 1, Max = 20 },
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }
@@ -57,7 +57,7 @@ public class CreateSaleRequestValidatorTests
         var result = _validator.TestValidate(request);
 
         //Assert
-        result.ShouldHaveValidationErrorFor(x => x.Items);
+        result.ShouldHaveValidationErrorFor(x => x.Products);
     }
     
     [Fact(DisplayName = "Should have not validation error when validation do not pass")]
@@ -68,15 +68,15 @@ public class CreateSaleRequestValidatorTests
         {
             CustomerId = Guid.NewGuid(),
             BranchId = Guid.NewGuid(),
-            Items = new List<CreateSaleItemRequest>()
+            Products = new List<CreateSaleProductRequest>()
             {
-                new CreateSaleItemRequest
+                new CreateSaleProductRequest
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 5,
                     UnitPrice = 0.01m
                 },
-                new CreateSaleItemRequest
+                new CreateSaleProductRequest
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 4,
@@ -100,15 +100,15 @@ public class CreateSaleRequestValidatorTests
         {
             CustomerId = Guid.NewGuid(),
             BranchId = Guid.NewGuid(),
-            Items = new List<CreateSaleItemRequest>()
+            Products = new List<CreateSaleProductRequest>()
             {
-                new CreateSaleItemRequest
+                new CreateSaleProductRequest
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 20,
                     UnitPrice = 10m
                 },
-                new CreateSaleItemRequest
+                new CreateSaleProductRequest
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 22,
@@ -121,6 +121,6 @@ public class CreateSaleRequestValidatorTests
         var result = _validator.TestValidate(request);
         
         //Assert
-        result.ShouldHaveValidationErrorFor(x => x.Items);
+        result.ShouldHaveValidationErrorFor(x => x.Products);
     }
 }

@@ -19,7 +19,7 @@ public class CreateSaleHandlerTests
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly CreateSaleHandler _handler;
     private readonly IDiscountPolicy _discountPolicy;
@@ -29,7 +29,7 @@ public class CreateSaleHandlerTests
         _saleRepository = Substitute.For<ISaleRepository>();
         _mapper = Substitute.For<IMapper>();
         _logger = Substitute.For<ILogger<CreateSaleHandler>>();
-        _options = Options.Create(new SaleUnitOptions
+        _options = Options.Create(new SaleProductOptions
         {
             UnitQuantity = new UnitQuantity { Min = 1, Max = 20 },
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }

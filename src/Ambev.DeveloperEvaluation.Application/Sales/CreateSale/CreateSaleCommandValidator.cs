@@ -7,17 +7,17 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 
 public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
 {
-    public CreateSaleCommandValidator(SaleUnitOptions options)
+    public CreateSaleCommandValidator(SaleProductOptions options)
     {
-        RuleFor(x => x.Items)
+        RuleFor(x => x.Products)
             .NotEmpty()
             .WithMessage("You must specify at least one item.")
             .ForEach(item => item.SetValidator(new SaleProductDtoValidator(options)));
 
-        RuleFor(x => x.Items)
+        RuleFor(x => x.Products)
             .Must(items => ValidateQuantityProductLimit(items, options.UnitQuantity.Max))
             .WithMessage(ValidationMessages.Max("Items total quantity", options.UnitQuantity.Max))
-            .When(x => x?.Items != null && x.Items.Any());        
+            .When(x => x?.Products != null && x.Products.Any());        
         
         RuleFor(x => x.BranchId)
             .NotEmpty();

@@ -5,7 +5,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
 public class Sale : BaseEntity
 {
-    private readonly List<SaleProduct> _items = Enumerable.Empty<SaleProduct>().ToList();
+    private readonly List<SaleProduct> _products = Enumerable.Empty<SaleProduct>().ToList();
     
     public int SaleNumber { get; private set; }
     public Guid CustomerId { get; private set; }
@@ -16,13 +16,14 @@ public class Sale : BaseEntity
     public DateTime CreatedAt { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
 
-    public IReadOnlyCollection<SaleProduct> Items => _items;
+    public IReadOnlyCollection<SaleProduct> Items => _products;
 
     public Sale(Guid customerId, Guid branchId)
     {
         Id = Guid.NewGuid();
         BranchId = branchId;
         CustomerId = customerId;
+        CreatedAt = DateTime.UtcNow; 
     }
 
     public void AddItem(SaleProduct product)
@@ -32,13 +33,13 @@ public class Sale : BaseEntity
 
         EnsureProductQuantityLimitIsNotExceeded(product);
         
-        _items.Add(product);
+        _products.Add(product);
         RecalculateTotal();
     }
 
     private void EnsureProductQuantityLimitIsNotExceeded(SaleProduct newProduct)
     {
-        var currentQuantity = _items
+        var currentQuantity = _products
             .Where(i => i.ProductId == newProduct.ProductId)
             .Sum(i => i.Quantity);
 
@@ -52,7 +53,7 @@ public class Sale : BaseEntity
     
     private void RecalculateTotal()
     {
-        TotalAmount = _items.Sum(items => items.TotalAmount);
+        TotalAmount = _products.Sum(items => items.TotalAmount);
         UpdatedAt = DateTime.UtcNow;
     }
 

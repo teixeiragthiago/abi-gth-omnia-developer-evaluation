@@ -4,9 +4,9 @@ using FluentValidation;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 
-public class CreateSaleItemRequestValidator : AbstractValidator<CreateSaleItemRequest>
+public class CreateSaleProductRequestValidator : AbstractValidator<CreateSaleProductRequest>
 {
-    public CreateSaleItemRequestValidator(SaleProductOptions options)
+    public CreateSaleProductRequestValidator(SaleProductOptions options)
     {
         RuleFor(saleItem => saleItem.ProductId)
             .NotEmpty();

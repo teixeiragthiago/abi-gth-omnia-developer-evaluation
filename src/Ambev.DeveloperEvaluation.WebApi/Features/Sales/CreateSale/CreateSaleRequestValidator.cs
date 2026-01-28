@@ -6,17 +6,17 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 
 public class CreateSaleRequestValidator : AbstractValidator<CreateSaleRequest>
 {
-    public CreateSaleRequestValidator(SaleUnitOptions options)
+    public CreateSaleRequestValidator(SaleProductOptions options)
     {
-        RuleFor(x => x.Items)
+        RuleFor(x => x.Products)
             .NotEmpty()
             .WithMessage("You must specify at least one item.")
-            .ForEach(item => item.SetValidator(new CreateSaleItemRequestValidator(options)));
+            .ForEach(item => item.SetValidator(new CreateSaleProductRequestValidator(options)));
 
-        RuleFor(x => x.Items)
+        RuleFor(x => x.Products)
             .Must(items => ValidateQuantityProductLimit(items, options.UnitQuantity.Max))
             .WithMessage(ValidationMessages.Max("Items total quantity", options.UnitQuantity.Max))
-            .When(x => x?.Items != null && x.Items.Any());        
+            .When(x => x?.Products != null && x.Products.Any());        
         
         RuleFor(x => x.BranchId)
             .NotEmpty();
@@ -26,7 +26,7 @@ public class CreateSaleRequestValidator : AbstractValidator<CreateSaleRequest>
     }
     
     private static bool ValidateQuantityProductLimit(
-        IEnumerable<CreateSaleItemRequest> items,
+        IEnumerable<CreateSaleProductRequest> items,
         int maxQuantityPerProduct)
     {
         if (items == null || !items.Any())
@@ -40,7 +40,7 @@ public class CreateSaleRequestValidator : AbstractValidator<CreateSaleRequest>
     }
 
     private static IEnumerable<int> AggroupTotalQuantityPerProduct(
-        IEnumerable<CreateSaleItemRequest> items)
+        IEnumerable<CreateSaleProductRequest> items)
     {
         return items
             .GroupBy(item => item.ProductId)

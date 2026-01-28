@@ -40,8 +40,9 @@ public class SaleProductConfiguration
             .IsRequired();
 
         builder.Property(s => s.CreatedAt)
-            .IsRequired()
-            .HasDefaultValueSql("timezone('utc', now())");
+            .HasColumnType("timestamp with time zone")
+            .HasDefaultValueSql("timezone('utc', now())")
+            .ValueGeneratedOnAdd();
         
         builder.Property(s => s.UpdatedAt);
 

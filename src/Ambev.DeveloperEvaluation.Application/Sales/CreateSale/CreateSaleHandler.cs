@@ -15,11 +15,11 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly IDiscountPolicy _discountPolicy;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, IOptions<SaleUnitOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy)
+    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy)
     {
         _saleRepository = saleRepository;
         _mapper = mapper;
@@ -46,21 +46,26 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
         
         _logger.LogInformation("Finishing Sale handle creation {SaleId}", result.Id);
         
-        return result;
+        return new BaseSaleResult
+        {
+            Id = persistedSale.Id,
+        };
     }
 
     private Sale MapSaleFromCommandToEntity(CreateSaleCommand command)
     {
         var sale = new Sale(command.CustomerId, command.BranchId);
         
-        foreach (var item in command.Items)
+        foreach (var prod in command.Products)
         {
-            var saleItem = new SaleProduct(
-                item.ProductId,
-                item.UnitPrice,
-                item.Quantity,
-                _discountPolicy.CalculateDiscountPercent(item.ProductId, item.Quantity)
+            var saleProducts = new SaleProduct(
+                prod.ProductId,
+                prod.UnitPrice,
+                prod.Quantity,
+                _discountPolicy.CalculateDiscountPercent(prod.ProductId, prod.Quantity)
             );
+            
+            sale.AddItem(saleProducts);
         }
         
         return sale;

@@ -22,14 +22,14 @@ public class SalesControllerTests
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly IOptions<SaleUnitOptions> _options;
+    private readonly IOptions<SaleProductOptions> _options;
     private readonly SalesController _saleController;
 
     public SalesControllerTests()
     {
         _mediator = Substitute.For<IMediator>();
         _mapper = Substitute.For<IMapper>();
-        _options = Options.Create(new SaleUnitOptions
+        _options = Options.Create(new SaleProductOptions
         {
             UnitQuantity = new UnitQuantity { Min = 1, Max = 20 },
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }
@@ -44,7 +44,7 @@ public class SalesControllerTests
         var saleItem1 = SaleControlleDataFixture.CreateValidSaleItem(1, 20);
         var saleItem2 = SaleControlleDataFixture.CreateValidSaleItem(2, 30);
         
-        var saleRequest = SaleControlleDataFixture.CreateValidSale(items: new List<CreateSaleItemRequest>() { saleItem1, saleItem2 });
+        var saleRequest = SaleControlleDataFixture.CreateValidSale(items: new List<CreateSaleProductRequest>() { saleItem1, saleItem2 });
         var command = _mapper.Map<CreateSaleCommand>(saleRequest);
 
         await _mediator.Send(command, CancellationToken.None);

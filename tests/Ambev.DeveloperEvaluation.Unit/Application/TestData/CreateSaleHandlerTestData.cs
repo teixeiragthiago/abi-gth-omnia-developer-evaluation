@@ -12,7 +12,7 @@ public static class CreateSaleHandlerTestData
         {
             BranchId = Guid.NewGuid(),
             CustomerId = Guid.NewGuid(),
-            Items = new[]
+            Products = new[]
             {
                 new SaleProductDto
                 {
@@ -30,7 +30,7 @@ public static class CreateSaleHandlerTestData
         {
             BranchId = Guid.NewGuid(),
             CustomerId = Guid.NewGuid(),
-            Items = new[]
+            Products = new[]
             {
                 new SaleProductDto
                 {

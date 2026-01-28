@@ -25,6 +25,7 @@ public class SaleProduct : BaseEntity
         DiscountPercentage = discountPercentage;
         DiscountAmount = CalculateDiscountAmount();
         TotalAmount = CalculateTotalAmount();
+        CreatedAt = DateTime.UtcNow;
     }
     
     

@@ -6,7 +6,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.Base;
 
 public class SaleProductDtoValidator : AbstractValidator<SaleProductDto>
 {
-    public SaleProductDtoValidator(SaleUnitOptions options)
+    public SaleProductDtoValidator(SaleProductOptions options)
     {
         RuleFor(saleItem => saleItem.ProductId)
             .NotEmpty();

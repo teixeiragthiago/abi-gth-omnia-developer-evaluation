@@ -4,5 +4,5 @@ public class CreateSaleRequest
 {
     public Guid CustomerId { get; init; }
     public Guid BranchId { get; init; }
-    public IEnumerable<CreateSaleItemRequest> Items { get; set; } = Enumerable.Empty<CreateSaleItemRequest>();
+    public IEnumerable<CreateSaleProductRequest> Products { get; set; } = Enumerable.Empty<CreateSaleProductRequest>();
 }

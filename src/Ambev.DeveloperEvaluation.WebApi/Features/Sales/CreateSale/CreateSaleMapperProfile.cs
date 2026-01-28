@@ -11,7 +11,7 @@ public class CreateSaleMapperProfile : Profile
         CreateMap<CreateSaleRequest, CreateSaleCommand>();
         CreateMap<BaseSaleResult, SaleResponse>();
 
-        CreateMap<CreateSaleItemRequest, SaleProductDto>();
+        CreateMap<CreateSaleProductRequest, SaleProductDto>();
         CreateMap<SaleProductResult, SaleProductDto>();
     }
 }
