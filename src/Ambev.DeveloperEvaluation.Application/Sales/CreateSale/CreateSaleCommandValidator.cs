@@ -12,7 +12,7 @@ public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
         RuleFor(x => x.Items)
             .NotEmpty()
             .WithMessage("You must specify at least one item.")
-            .ForEach(item => item.SetValidator(new SaleItemDtoValidator(options)));
+            .ForEach(item => item.SetValidator(new SaleProductDtoValidator(options)));
 
         RuleFor(x => x.Items)
             .Must(items => ValidateQuantityProductLimit(items, options.UnitQuantity.Max))
@@ -27,7 +27,7 @@ public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
     }
     
     private static bool ValidateQuantityProductLimit(
-        IEnumerable<SaleItemDto> items,
+        IEnumerable<SaleProductDto> items,
         int maxQuantityPerProduct)
     {
         if (items == null || !items.Any())
@@ -41,7 +41,7 @@ public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
     }
 
     private static IEnumerable<int> AggroupTotalQuantityPerProduct(
-        IEnumerable<SaleItemDto> items)
+        IEnumerable<SaleProductDto> items)
     {
         return items
             .GroupBy(item => item.ProductId)

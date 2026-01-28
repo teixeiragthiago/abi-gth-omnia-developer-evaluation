@@ -14,7 +14,7 @@ public static class CreateSaleHandlerTestData
             CustomerId = Guid.NewGuid(),
             Items = new[]
             {
-                new SaleItemDto
+                new SaleProductDto
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 2,
@@ -32,7 +32,7 @@ public static class CreateSaleHandlerTestData
             CustomerId = Guid.NewGuid(),
             Items = new[]
             {
-                new SaleItemDto
+                new SaleProductDto
                 {
                     ProductId = Guid.NewGuid(),
                     Quantity = 0,

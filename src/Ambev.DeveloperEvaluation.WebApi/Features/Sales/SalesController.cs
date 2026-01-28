@@ -95,15 +95,15 @@ public class SalesController : BaseController
     [ProducesResponseType(typeof(ApiResponseWithData<SaleResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> IncludeSaleItem(
         [FromRoute] Guid id,
-        [FromBody]IncludeSaleItemRequest request,
+        [FromBody]IncludeSaleProductRequest request,
         CancellationToken cancellationToken)
     {
-        var validator = new IncludeSaleItemRequestValidator(_options.Value);
+        var validator = new IncludeSaleProductRequestValidator(_options.Value);
         var resultValidation = await validator.ValidateAsync(request, cancellationToken);
         if(!resultValidation.IsValid)
             return BadRequest(resultValidation.Errors);
 
-        var command = new IncludeSaleItemCommand
+        var command = new IncludeSaleProductCommand
         {
             ProductId = request.ProductId,
             UnitPrice =  request.UnitPrice,

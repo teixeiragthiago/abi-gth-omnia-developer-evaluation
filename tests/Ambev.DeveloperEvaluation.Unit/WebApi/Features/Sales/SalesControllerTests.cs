@@ -154,14 +154,14 @@ public class SalesControllerTests
         //Arrange
         var saleId = Guid.NewGuid();
         
-        var request = new IncludeSaleItemRequest
+        var request = new IncludeSaleProductRequest
         {
             ProductId = Guid.NewGuid(),
             UnitPrice = 10m,
             Quantity = 2
         };
             
-        var command = new IncludeSaleItemCommand
+        var command = new IncludeSaleProductCommand
         {
             ProductId = request.ProductId,
             UnitPrice = request.UnitPrice,
@@ -185,14 +185,14 @@ public class SalesControllerTests
         //Arrange
         var saleId = Guid.NewGuid();
         
-        var request = new IncludeSaleItemRequest
+        var request = new IncludeSaleProductRequest
         {
             ProductId = Guid.Empty,
             UnitPrice = 0,
             Quantity = 0
         };
             
-        var command = new IncludeSaleItemCommand
+        var command = new IncludeSaleProductCommand
         {
             ProductId = request.ProductId,
             UnitPrice = request.UnitPrice,

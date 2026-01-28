@@ -55,7 +55,7 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
         
         foreach (var item in command.Items)
         {
-            var saleItem = new SaleItem(
+            var saleItem = new SaleProduct(
                 item.ProductId,
                 item.UnitPrice,
                 item.Quantity,
