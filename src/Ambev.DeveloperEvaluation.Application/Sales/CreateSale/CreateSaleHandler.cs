@@ -14,15 +14,13 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResult>
 {
     private readonly ISaleRepository _saleRepository;
-    private readonly IMapper _mapper;
     private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly IDiscountPolicy _discountPolicy;
 
-    public CreateSaleHandler(ISaleRepository saleRepository, IMapper mapper, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy)
+    public CreateSaleHandler(ISaleRepository saleRepository, IOptions<SaleProductOptions> options, ILogger<CreateSaleHandler> logger, IDiscountPolicy discountPolicy)
     {
         _saleRepository = saleRepository;
-        _mapper = mapper;
         _options = options;
         _logger = logger;
         _discountPolicy = discountPolicy;
@@ -41,15 +39,9 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, BaseSaleResu
         var sale = MapSaleFromCommandToEntity(command);
         
         var persistedSale = await _saleRepository.InsertAsync(sale, cancellationToken);
-        
-        var result = _mapper.Map<BaseSaleResult>(persistedSale); //TODO criar mapper
-        
-        _logger.LogInformation("Finishing Sale handle creation {SaleId}", result.Id);
-        
-        return new BaseSaleResult
-        {
-            Id = persistedSale.Id,
-        };
+        _logger.LogInformation("Finishing Sale handle creation {SaleId}", persistedSale.Id);
+
+        return persistedSale.ToResult();
     }
 
     private Sale MapSaleFromCommandToEntity(CreateSaleCommand command)

@@ -1,4 +1,5 @@
 using Ambev.DeveloperEvaluation.Application.Options;
+using Ambev.DeveloperEvaluation.Application.Sales.Base;
 using Ambev.DeveloperEvaluation.Application.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
@@ -47,17 +48,14 @@ public class SalesControllerTests
         var saleRequest = SaleControlleDataFixture.CreateValidSale(items: new List<CreateSaleProductRequest>() { saleItem1, saleItem2 });
         var command = _mapper.Map<CreateSaleCommand>(saleRequest);
 
-        await _mediator.Send(command, CancellationToken.None);
+        _mediator.Send(command, CancellationToken.None)
+            .ReturnsForAnyArgs(new BaseSaleResult());
             
         //Act
         var result = await _saleController.CreateSale(saleRequest, CancellationToken.None);
 
         //Assert
-        result.Should().NotBeNull();
-        result.Should().BeOfType<CreatedResult>();
-
-        var acceptedResult = result as CreatedResult;
-        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status201Created);    
+        result.Should().NotBeNull().And.BeOfType<CreatedResult>();                    
     }
     
     [Fact(DisplayName = "Sales Controller: Create Sale Must Return BadRequest")]
@@ -86,15 +84,17 @@ public class SalesControllerTests
         //Arrange
         var command = new GetSaleCommand{Id = Guid.NewGuid()};
         
-        await _mediator.Send(command, CancellationToken.None);
+        _mediator.Send(command, CancellationToken.None)
+            .ReturnsForAnyArgs(new BaseSaleResult{ Id = Guid.NewGuid() });
             
         //Act
         var result = await _saleController.GetSale(Guid.NewGuid(), CancellationToken.None);
 
         //Assert
-
-        var acceptedResult = result as OkObjectResult;
-        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status200OK);    
+        result.Should().NotBeNull().And.BeOfType<OkObjectResult>();
+        
+        // var acceptedResult = result as OkObjectResult;
+        // acceptedResult!.StatusCode.Should().Be(StatusCodes.Status200OK);    
     }
     
     [Fact(DisplayName = "Sales Controller: Get Sale must return bad request when request is invalid")]
@@ -114,21 +114,22 @@ public class SalesControllerTests
         acceptedResult!.StatusCode.Should().Be(StatusCodes.Status400BadRequest);    
     }
     
-    [Fact(DisplayName = "Sales Controller: Cancel Sale Must Return With NoContent")]
-    public async Task CancelSale_MustReturnNoContentWhenRequestIsValid()
+    [Fact(DisplayName = "Sales Controller: Cancel Sale Must Return With Sucess")]
+    public async Task CancelSale_MustReturnSucessWhenRequestIsValid()
     {
         //Arrange
         var command = new CancelSaleCommand{Id = Guid.NewGuid()};
         
-        await _mediator.Send(command, CancellationToken.None);
+        _mediator.Send(command, CancellationToken.None)
+            .ReturnsForAnyArgs(new BaseSaleResult());
             
         //Act
         var result = await _saleController.CancelSale(Guid.NewGuid(), CancellationToken.None);
 
         //Assert
 
-        var acceptedResult = result as NoContentResult;
-        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status204NoContent);    
+        var acceptedResult = result as OkObjectResult;
+        acceptedResult!.StatusCode.Should().Be(StatusCodes.Status200OK);    
     }
     
     [Fact(DisplayName = "Sales Controller: Cancel Sale must return bad request when request is invalid")]
@@ -168,15 +169,14 @@ public class SalesControllerTests
             Quantity = request.Quantity
         };
         
-        await _mediator.Send(command, CancellationToken.None);
+        _mediator.Send(command, CancellationToken.None)
+            .ReturnsForAnyArgs(new BaseSaleResult());
             
         //Act
         var result = await _saleController.IncludeSaleItem(saleId, request, CancellationToken.None);
 
         //Assert
-
-        var okStatusResult = result as OkResult;
-        okStatusResult!.StatusCode.Should().Be(StatusCodes.Status200OK);    
+        result.Should().NotBeNull().And.BeOfType<CreatedResult>();
     }
     
     [Fact(DisplayName = "Sales Controller: Include sale item must return bad request when request is invalid")]

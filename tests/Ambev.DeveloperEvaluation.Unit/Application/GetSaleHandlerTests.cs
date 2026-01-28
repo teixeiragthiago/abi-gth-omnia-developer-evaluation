@@ -14,14 +14,12 @@ namespace Ambev.DeveloperEvaluation.Unit.Application;
 public class GetSaleHandlerTests
 {
     private readonly ISaleRepository _saleRepository;
-    private readonly IMapper _mapper;
     private readonly GetSaleHandler _handler;
 
     public GetSaleHandlerTests()
     {
         _saleRepository = Substitute.For<ISaleRepository>();
-        _mapper = Substitute.For<IMapper>();
-        _handler = new GetSaleHandler(_saleRepository, _mapper);
+        _handler = new GetSaleHandler(_saleRepository);
     }
     
     [Fact(DisplayName = "Given valid sale command When handling Then returns sale result")]

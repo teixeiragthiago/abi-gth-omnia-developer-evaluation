@@ -15,7 +15,6 @@ namespace Ambev.DeveloperEvaluation.Unit.Application;
 public class IncludeSaleProductHandlerTests
 {
     private readonly ISaleRepository _saleRepository;
-    private readonly IMapper _mapper;
     private readonly ILogger<IncludeSaleProductHandler> _logger;
     private readonly IncludeSaleProductHandler _handler;
     private readonly IDiscountPolicy _discountPolicy;
@@ -23,10 +22,9 @@ public class IncludeSaleProductHandlerTests
     public IncludeSaleProductHandlerTests()
     {
         _saleRepository = Substitute.For<ISaleRepository>();
-        _mapper = Substitute.For<IMapper>();
         _logger = Substitute.For<ILogger<IncludeSaleProductHandler>>();
         _discountPolicy = Substitute.For<IDiscountPolicy>();
-        _handler = new IncludeSaleProductHandler(_saleRepository, _mapper, _logger, _discountPolicy);
+        _handler = new IncludeSaleProductHandler(_saleRepository, _logger, _discountPolicy);
     }
     
     [Fact(DisplayName = "Should include new saleItem when sale is valid")]

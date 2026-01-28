@@ -18,7 +18,6 @@ namespace Ambev.DeveloperEvaluation.Unit.Application;
 public class CreateSaleHandlerTests
 {
     private readonly ISaleRepository _saleRepository;
-    private readonly IMapper _mapper;
     private readonly IOptions<SaleProductOptions> _options;
     private readonly ILogger<CreateSaleHandler> _logger;
     private readonly CreateSaleHandler _handler;
@@ -27,7 +26,6 @@ public class CreateSaleHandlerTests
     public CreateSaleHandlerTests()
     {
         _saleRepository = Substitute.For<ISaleRepository>();
-        _mapper = Substitute.For<IMapper>();
         _logger = Substitute.For<ILogger<CreateSaleHandler>>();
         _options = Options.Create(new SaleProductOptions
         {
@@ -35,7 +33,7 @@ public class CreateSaleHandlerTests
             UnitPrice = new UnitPrice { Min = 0, Max = 99999 }
         });
         _discountPolicy = Substitute.For<IDiscountPolicy>();
-        _handler = new CreateSaleHandler(_saleRepository, _mapper, _options, _logger, _discountPolicy);
+        _handler = new CreateSaleHandler(_saleRepository, _options, _logger, _discountPolicy);
     }
     
     [Fact(DisplayName = "Given valid sale command When handling Then returns sale result")]
@@ -56,8 +54,6 @@ public class CreateSaleHandlerTests
 
         _saleRepository.InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>()).Returns(saleEntity);
 
-        _mapper.Map<BaseSaleResult>(saleEntity).Returns(saleResult);
-
         //Act
         var result = await _handler.Handle(command, CancellationToken.None);
 
@@ -66,8 +62,6 @@ public class CreateSaleHandlerTests
         result.Id.Should().Be(saleEntity.Id);
 
         await _saleRepository.Received(1).InsertAsync(Arg.Any<Sale>(), Arg.Any<CancellationToken>());
-
-        _mapper.Received(1).Map<BaseSaleResult>(saleEntity);
     }
     
     [Fact(DisplayName = "Given invalid sale command When handling Then throws validation exception")]

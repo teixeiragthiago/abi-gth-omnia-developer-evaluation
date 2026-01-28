@@ -38,9 +38,6 @@ public class CancelSaleHandler : IRequestHandler<CancelSaleCommand, BaseSaleResu
         
         _logger.LogInformation("Sale cancelled with success: {SaleId}", command.Id);
 
-        return new BaseSaleResult
-        {
-            Id = sale.Id,
-        }; //TODO map this
+        return sale.ToResult();
     }
 }

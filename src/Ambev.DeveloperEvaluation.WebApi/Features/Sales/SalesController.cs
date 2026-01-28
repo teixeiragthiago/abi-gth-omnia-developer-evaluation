@@ -3,7 +3,6 @@ using Ambev.DeveloperEvaluation.Application.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
 using Ambev.DeveloperEvaluation.Application.Sales.IncludeSaleItem;
-using Ambev.DeveloperEvaluation.Application.Users.GetUser;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CancelSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
@@ -49,7 +48,7 @@ public class SalesController : BaseController
         
         return Created(string.Empty, new
         {
-            Data = result
+            Data = result.ToResponse()
         });
      }
     
@@ -68,10 +67,7 @@ public class SalesController : BaseController
         var command = new GetSaleCommand{Id = id};
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new
-        {
-            Data = response
-        });
+        return Ok(response.ToResponse());
     }
     
     [HttpPost("{id}/cancel")]
@@ -86,9 +82,9 @@ public class SalesController : BaseController
             return BadRequest(resultValidation.Errors);
 
         var command = new CancelSaleCommand{ Id = id};
-        await _mediator.Send(command, cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken);
         
-        return NoContent();
+        return Ok(result.ToResponse());
     }
     
     [HttpPost("{saleId}/include-items")]
@@ -113,8 +109,11 @@ public class SalesController : BaseController
             Quantity = request.Quantity
         };
         
-        await _mediator.Send(command, cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken);
 
-        return Ok();
+        return Created(string.Empty, new
+        {
+            Data = result.ToResponse()
+        });
     }
 }

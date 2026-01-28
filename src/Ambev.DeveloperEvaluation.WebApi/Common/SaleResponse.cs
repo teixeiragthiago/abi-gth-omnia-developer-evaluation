@@ -1,5 +1,6 @@
-namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 
+namespace Ambev.DeveloperEvaluation.WebApi.Common;
 public class SaleResponse
 {
     public Guid Id { get; set; }
@@ -10,5 +11,6 @@ public class SaleResponse
     public DateTime? CancelledAt { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
-    public IEnumerable<SaleProductResponse> Products { get; set; } = [];
+    public bool IsCancelled { get; set; }
+    public IEnumerable<SaleProductResponse> Products { get; set; } = Enumerable.Empty<SaleProductResponse>();
 }
